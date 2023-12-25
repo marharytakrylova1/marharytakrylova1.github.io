@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmargos_personal_website=self.webpackChunkmargos_personal_website||[]).push([[938],{5314:function(e,n,t){t.r(n),t.d(n,{default:function(){return r}});var l=t(7294);function r(){return l.createElement("main",null,l.createElement("title",null,"Involvement"),l.createElement("h1",null,"Involvement"),l.createElement("p",null,"Coming soon..."))}}}]);
+//# sourceMappingURL=component---src-pages-involvement-js-0cc4d1ae50dac56826d7.js.map
