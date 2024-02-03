@@ -21,7 +21,7 @@ export default function Navbar() {
 
     return (
         <nav>
-            <div className={`fixed z-50 top-0 left-0 right-0 mb-25 h-20 ${scrollTop === 0 ? "" : "shadow"}`}>
+            <div className={`fixed z-50 top-0 left-0 right-0 mb-25 h-20 transition ease-in-out duration-200 ${scrollTop === 0 ? "bg-transparent" : "bg-white shadow"}`}>
                 <div className="flex items-center justify-between h-full px-16">
                     <Link to='/'><h1 className="text-2xl font-serif">MARHARYTA KRYLOVA</h1></Link>
                 <ul className="flex flex-row items-center space-x-8 text-lg">

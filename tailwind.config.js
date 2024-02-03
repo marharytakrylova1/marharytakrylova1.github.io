@@ -8,6 +8,8 @@ module.exports = {
     extend: {
       colors: {
         "duke": "#00539B",
+        "purple": "#68509D",
+        "light": "#F9F9F9",
         "aura": {
           "purple": "#3218D1",
           "blue": "#0F71C7"
