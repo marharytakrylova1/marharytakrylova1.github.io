@@ -1,5 +1,6 @@
 import * as React from "react"
 import Navbar from "../components/navbar"
+import Aura from "../components/aura"
 
 export default function Experience() {
     return (
