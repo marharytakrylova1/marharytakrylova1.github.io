@@ -14,6 +14,14 @@ module.exports = {
           "purple": "#3218D1",
           "blue": "#0F71C7"
         }
+      },
+      maxWidth: {
+        '8xl': '88rem',
+        '9xl': '96rem',
+        '10xl': '104rem',
+        '11xl': '120rem',
+        '12xl': '140rem',
+
       }
     },
   },
