@@ -43,12 +43,20 @@ export default function IndexPage() {
     let margo_bound = margo.getBoundingClientRect();
     let margo_x = (margo_bound.left + margo_bound.right) / 2;
     let margo_y = margo_bound.bottom;
+    let w = window.innerWidth;
 
     // School formatting
     let school = document.getElementById("school");
     let chapel = document.getElementById("chapel");
-    let school_x_diff = 0.8 * margoWidth
-    let school_y_diff = 0.5 * margoWidth
+    let school_x_diff = 0;
+    let school_y_diff = 0;
+    if(w < 1024) {
+      school_x_diff = 0.45 * margoWidth
+      school_y_diff = 1.1 * margoWidth
+    } else {
+      school_x_diff = 0.8 * margoWidth
+      school_y_diff = 0.5 * margoWidth
+    }
     school.style.left = `calc(${margo_x - school_x_diff}px)`;
     school.style.top = `calc(${margo_y - school_y_diff}px)`;
     chapel.style.width = `${0.15 * margoWidth}px`;
@@ -56,8 +64,15 @@ export default function IndexPage() {
     // Major formatting
     let major = document.getElementById("major");
     let brain = document.getElementById("brain");
-    let major_x_diff = 0.6 * margoWidth;
-    let major_y_diff = 0.7 * margoWidth;
+    let major_x_diff = 0;
+    let major_y_diff = 0;
+    if(w < 1024) {
+      major_x_diff = 0.1 * margoWidth;
+      major_y_diff = 1.3 * margoWidth;
+    } else {
+      major_x_diff = 0.6 * margoWidth;
+      major_y_diff = 0.7 * margoWidth;
+    }
     major.style.left = `calc(${margo_x + major_x_diff}px)`;
     major.style.top = `calc(${margo_y - major_y_diff}px)`;
     brain.style.width = `${0.25 * margoWidth}px`;
@@ -65,8 +80,15 @@ export default function IndexPage() {
     // Minor formatting
     let minors = document.getElementById("minors");
     let books = document.getElementById("books");
-    let minors_x_diff = 0.8 * margoWidth;
-    let minors_y_diff = 0.3 * margoWidth;
+    let minors_x_diff = 0;
+    let minors_y_diff = 0;
+    if(w < 1024) {
+      minors_x_diff = 0.45 * margoWidth;
+      minors_y_diff = 1 * margoWidth;
+    } else {
+      minors_x_diff = 0.8 * margoWidth;
+      minors_y_diff = 0.3 * margoWidth;
+    }
     minors.style.left = `calc(${margo_x + minors_x_diff}px)`;
     minors.style.top = `calc(${margo_y - minors_y_diff}px)`;
     books.style.width = `${0.2 * margoWidth}px`;
@@ -189,47 +211,48 @@ export default function IndexPage() {
           {/* Floating elements that are dynamically updated by useEffect */}
           {/* School */}
           <div id="school" className="absolute transform -translate-x-1/2 -translate-y-1/2">
-            <div className="relative flex flex-col bg-white px-12 py-4 rounded-full text-center shadow">
-              <p className="text-2xl font-bold">Duke University</p>
-              <p className="text-duke text-xl">Class of 2026</p>
+            <div className="relative flex flex-col bg-white px-6 md:px-12 py-3 md:py-4 rounded-full text-center shadow">
+              <p className="text-base md:text-2xl font-bold">Duke University</p>
+              <p className="text-sm md:text-xl text-duke">Class of 2026</p>
               <img id="chapel" src={duke_chapel} alt="Duke Chapel" className="absolute -z-10 bottom-[95%] left-[60%] transform -translate-x-1/2" />
             </div>
           </div>
 
           {/* Major */}
           <div id="major" className="absolute transform -translate-x-1/2 -translate-y-1/2">
-            <div className="relative flex flex-col bg-white px-12 py-4 rounded-full text-center shadow">            
-              <p className="text-2xl font-bold">Major</p>
-              <p className="text-duke text-xl">Neuroscience</p>
+            <div className="relative flex flex-col bg-white px-6 md:px-12 py-3 md:py-4 rounded-full text-center shadow">            
+              <p className="text-base md:text-2xl font-bold">Major</p>
+              <p className="text-sm md:text-xl text-duke">Neuroscience</p>
               <img id="brain" src={brain} alt="Duke Chapel" className="absolute z-10 bottom-[85%] left-[60%] transform -translate-x-1/2" />
             </div>
           </div>
 
           {/* Minors */}
           <div id="minors" className="absolute transform -translate-x-1/2 -translate-y-1/2">
-            <div className="relative flex flex-col bg-white px-12 py-4 rounded-full text-center shadow">            
-              <p className="text-2xl font-bold">Minors</p>
-              <p className="text-duke text-xl whitespace-nowrap">Russian, Chemistry</p>
+            <div className="relative flex flex-col bg-white px-6 md:px-12 py-3 md:py-4 rounded-full text-center shadow">            
+              <p className="text-base md:text-2xl font-bold">Minors</p>
+              <p className="text-sm md:text-xl text-duke md:whitespace-nowrap">Russian, Chemistry</p>
               <img id="books" src={books} alt="Duke Chapel" className="absolute z-10 bottom-[45%] left-[110%] transform -translate-x-1/2 translate-y-1/2" />
             </div>
           </div>
 
           {/* Begin landing page */}
-          <div className="absolute top-0 left-0 w-full h-[80%]">
-            <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3">
-              <Aura width={margoWidth * 2} height={margoWidth * 1.3} />
+          <div className="h-screen w-full">
+            <div className="absolute top-0 left-0 w-full h-[60%] md:h-[80%]">
+              <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/3">
+                <Aura width={margoWidth * 2} height={margoWidth * 1.3} />
+              </div>
+              <img id="margo" src={margo_landing} alt="Margo Landing" className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[65%] md:w-[35%] max-w-[600px]"/>
             </div>
-            <img id="margo" src={margo_landing} alt="Margo Landing" className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[35%] max-w-[600px]"/>
-            <div id="margo_circ" className="absolute bg-yellow-500 rounded-full" />
-          </div>
-          <div className="absolute bottom-0 left-0 w-full bg-duke h-[20%]">
-            <div className="flex flex-row justify-around items-center h-full">
-              {socials.map((social) => (
-                <a href={social.link} target="_blank" rel="noreferrer" className="flex flex-row items-center space-x-6">
-                  {social.icon}
-                  <p className="text-white text-lg">{social.text}</p>
-                </a>
-              ))}
+            <div className="absolute bottom-0 left-0 w-full bg-duke h-[40%] md:h-[20%] pb-[15%] md:pb-0">
+              <div className="flex flex-col md:flex-row justify-around items-center h-full">
+                {socials.map((social) => (
+                  <a href={social.link} target="_blank" rel="noreferrer" className="flex flex-row items-center space-x-6">
+                    {social.icon}
+                    <p className="text-white text-lg">{social.text}</p>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -237,7 +260,7 @@ export default function IndexPage() {
         {/* About section */}
         <div className="w-full bg-duke text-white text-center">
           <p className="text-5xl font-semibold text-center">About Me</p>
-          <p className="px-24 max-w-[120ch] mx-auto pt-4 pb-8">I am a Duke University student, majoring in Neuroscience, and minoring in Chemistry and Russian. 
+          <p className="px-8 md:px-24 md:max-w-[120ch] mx-auto pt-4 pb-8">I am a Duke University student, majoring in Neuroscience, and minoring in Chemistry and Russian. 
           Dedicated to achieving my goal of becoming a competent physician, I find particular interest in neurosurgery. I am also deeply 
           interested in healthcare strategy and the intersection between business/finance and healthcare. My career aspirations include 
           continuing education, research, serving patients and communities, and addressing under-representation in medicine — a direct 
@@ -250,7 +273,7 @@ export default function IndexPage() {
         <BlueRipple bg="#F9F9F9" rotation={180} />
         <div className="bg-light pb-24">
           <p className="text-5xl font-semibold pt-12 pb-12 text-center">Education</p>
-          <div className="grid grid-cols-3 gap-8 px-16 mx-auto max-w-9xl">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-8 md:px-16 mx-auto max-w-9xl">
             {education.map((school) => (
               <div className="bg-white rounded-2xl p-6 flex flex-col justify-around space-y-4 shadow">
                 <div className="flex flex-row items-center space-x-4">
@@ -277,7 +300,7 @@ export default function IndexPage() {
         <PurpleRipple bg="#F9F9F9" />
         <div className="bg-purple pb-24">
           <p className="text-5xl font-semibold pt-12 pb-12 text-center text-white">Certifications</p>
-          <div className="grid grid-cols-2 gap-8 w-3/4 mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-8 md:px-0 mx-auto max-w-7xl">
             {certifications.map((cert) => (
               <div className="bg-white rounded-2xl p-8 flex flex-col justify-around space-y-4 shadow">
                   <p className="text-xl xl:text-2xl font-semibold text-duke">{cert.name}</p>
@@ -302,7 +325,7 @@ export default function IndexPage() {
         {/* Languages section */}
         <div id="languages" className="pb-24">
           <p className="text-5xl font-semibold pt-12 pb-12 text-center">Languages</p>
-          <div className="grid grid-cols-2 xl:grid-cols-3 gap-8 w-3/4 mx-auto max-w-8xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-3/4 mx-auto max-w-8xl">
             {languages.map((lang) => (
               <div className="bg-white rounded-2xl p-8 flex flex-row justify-between items-center space-x-4 shadow">
                 <div>
