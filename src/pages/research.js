@@ -108,8 +108,8 @@ export default function Research() {
         <main>
             <Layout>
                 {/* Landing */}
-                <div className="h-[85vh] w-full flex flex-row justify-center items-center">
-                    <div className="w-1/2 mx-12 flex flex-col justify-center items-center">
+                <div className="h-[85vh] w-full flex flex-col md:flex-row justify-center items-center">
+                    <div className="w-11/12 md:w-1/2 h-1/2 md:h-auto mt-12 md:mt-0 mx-12 flex flex-col justify-center items-center">
                         <div className="max-w-xl">
                             <div className="w-min">
                                 <h1 className="text-5xl font-semibold">Research</h1>
@@ -121,7 +121,7 @@ export default function Research() {
                             understanding of my areas of study.</p>
                         </div>
                     </div>
-                    <div id="right" className="relative w-1/2 h-full flex flex-col justify-center items-center">
+                    <div id="right" className="relative w-11/12 md:w-1/2 h-1/2 md:h-full flex flex-col justify-center items-center">
                         <img src={margo_research} alt="" className="absolute w-[60%] xl:w-[45%] bottom-0" />
                         <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-[30%] -translate-y-1/2">
                             <Aura width={rightWidth / 2} height={rightWidth} />
@@ -133,21 +133,21 @@ export default function Research() {
                 {/* Current Research */}
                 <div id="current" />
                 <BlueRipple rotation={180} />
-                <h1 className="text-5xl font-semibold pt-24 pb-12 text-center">Current Research</h1>
-                <div className="w-10/12 max-w-12xl mx-auto flex flex-col space-y-16 mb-16">
+                <h1 className="text-5xl font-semibold pt-12 md:pt-24 pb-12 text-center">Current Research</h1>
+                <div className="w-full md:w-10/12 px-8 md:px-0 max-w-12xl mx-auto flex flex-col space-y-24 md:space-y-16 mb-16">
                     {current_research.map((research, index) => (
-                        <div key={index} className="flex flex-row justify-between items-center">
-                            <div className="w-[50%] flex flex-col space-y-4">
-                                <p className="text-lg xl:text-xl text-gray-700">{research.dates}</p>
-                                <h2 className="text-2xl xl:text-3xl font-semibold">{research.name}</h2>
-                                <p className="text-lg xl:text-2xl font-semibold">{research.subtitle}</p>
-                                <ul className="text-sm xl:text-xl list-disc ml-8">
+                        <div key={index} className="flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
+                            <div className="w-full md:w-[50%] flex flex-col space-y-4">
+                                <p className="text-base md:text-lg xl:text-xl text-gray-700">{research.dates}</p>
+                                <h2 className="text-xl md:text-2xl xl:text-3xl font-semibold">{research.name}</h2>
+                                <p className="text-base md:text-lg xl:text-2xl font-semibold">{research.subtitle}</p>
+                                <ul className="text-xs md:text-sm xl:text-xl list-disc ml-8">
                                     {research.actions.map((action, index) => (
                                         <li key={index}>{action}</li>
                                     ))}
                                 </ul>
                             </div>
-                            <div className="w-[40%] flex flex-row justify-between">
+                            <div className="w-full md:w-[40%] flex flex-row justify-between">
                                 {research.images.map((image, index) => (
                                     <img key={index} src={image} alt="" className="w-[47%]" />
                                 ))}
@@ -161,14 +161,14 @@ export default function Research() {
                 <div id="past" />
                 <PurpleRipple rotation={180} bg="#F9F9F9" />
                 <div className="bg-light pb-16">
-                    <h1 className="text-5xl font-semibold pt-24 pb-12 text-center">Past Research</h1>
-                    <div className="w-10/12 max-w-12xl mx-auto grid grid-cols-2 gap-12 bg-light">
+                    <h1 className="text-5xl font-semibold pt-12 md:pt-24 pb-12 text-center">Past Research</h1>
+                    <div className="w-full md:w-10/12 px-8 md:px-0 max-w-12xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 bg-light">
                         {past_research.map((research, index) => (
                             <div key={index} className="flex flex-col justify-between space-y-4 bg-white p-8 rounded-lg shadow">
-                                <p className="text-lg xl:text-xl text-gray-700">{research.dates}</p>
-                                <h2 className="text-2xl xl:text-3xl font-semibold">{research.name}</h2>
-                                <p className="text-lg xl:text-2xl font-semibold">{research.subtitle}</p>
-                                <ul className="text-sm xl:text-xl list-disc ml-8">
+                                <p className="text-base md:text-lg xl:text-xl text-gray-700">{research.dates}</p>
+                                <h2 className="text-xl md:text-2xl xl:text-3xl font-semibold">{research.name}</h2>
+                                <p className="text-base md:text-lg xl:text-2xl font-semibold">{research.subtitle}</p>
+                                <ul className="text-xs md:text-sm xl:text-xl list-disc ml-8">
                                     {research.actions.map((action, index) => (
                                         <li key={index}>{action}</li>
                                     ))}

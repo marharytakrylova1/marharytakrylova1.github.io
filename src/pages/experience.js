@@ -295,7 +295,7 @@ export default function Experience() {
             <Layout>
                 {/* Landing */}
                 <div className="relative h-screen w-full">
-                    <div className="flex flex-col md:flex-row justify-center md:justify-center items-center h-full w-full">
+                    <div className="flex flex-col md:flex-row justify-center items-center h-full w-full">
                         <div className="w-11/12 md:w-1/2 flex flex-col justify-center items-center">
                             <div className="max-w-xl mx-8 md:mx-12">
                                 <div className="w-min">
@@ -320,7 +320,7 @@ export default function Experience() {
                 </div>
 
                 {/* Employment */}
-                <h1 id="employment" className="text-5xl font-semibold pt-24 pb-12 text-center">Employment</h1>
+                <h1 id="employment" className="text-5xl font-semibold pt-0 md:pt-24 pb-12 text-center">Employment</h1>
                 <div className="max-w-12xl grid grid-cols-1 md:grid-cols-2 grid-rows-6 md:grid-rows-3 mx-auto px-8 md:px-12">
                     <div className="relative flex md:hidden flex-col justify-center px-0 md:px-20 py-8">
                         <div className="hidden md:block absolute bottom-0 left-0 h-12 w-12 bg-duke" >
