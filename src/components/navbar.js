@@ -8,8 +8,10 @@ import hamburger from "../images/hamburger.png"
 export default function Navbar() {
     const [scrollTop, setScrollTop] = useState(0);
     const [location, setLocation] = useState("");
+    const isBrowser = typeof window !== "undefined"
 
     useEffect(() => {
+        if (!isBrowser) return false;
         // Scroll listener
         const onScroll = e => {
           setScrollTop(e.target.documentElement.scrollTop);

@@ -31,8 +31,10 @@ export default function Experience() {
     const [pageWidth, setPageWidth] = useState(0);
     const [numCarousel, setNumCarousel] = useState(1);
     const [translateDistance, setTranslateDistance] = useState(0);
+    const isBrowser = typeof window !== "undefined"
 
     function calcCarouselPages() {
+        if (!isBrowser) return false;
         // Set numper of carousel pages based on client width
         let w = window.innerWidth;
         if (w < 768) {
@@ -59,9 +61,10 @@ export default function Experience() {
     }
 
     useEffect(() => {
+        if (!isBrowser) return false;
         document.title = "Experience | Marharyta Krylova";
         // Add resize event listener
-        window?.addEventListener("resize", () => {
+        window.addEventListener("resize", () => {
             setRightWidth(document?.getElementById("right")?.clientWidth);
             setCarouselWidth(document?.getElementById("carousel")?.clientWidth);
         });
@@ -70,7 +73,7 @@ export default function Experience() {
 
         // Remove resize event listener
         return () => {
-            window?.removeEventListener("resize", () => {
+            window.removeEventListener("resize", () => {
             setRightWidth(document?.getElementById("right")?.clientWidth);
             setCarouselWidth(document?.getElementById("carousel")?.clientWidth)
         });
@@ -492,7 +495,7 @@ export default function Experience() {
                         <div className="flex flex-col space-y-8 md:space-y-16">
                             {conferences.map((conference, index) => (
                                 <div key={index} className="p-6 md:p-12 flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 space-x-0 md:space-x-32">
-                                    {(index % 2 === 1 && window?.innerWidth >= 1024) && <img src={conference.image} alt="" className="w-full md:w-[40%] mx-auto object-contain rounded-tr-3xl rounded-bl-3xl shadow" />}
+                                    {(index % 2 === 1 && isBrowser && window.innerWidth >= 1024) && <img src={conference.image} alt="" className="w-full md:w-[40%] mx-auto object-contain rounded-tr-3xl rounded-bl-3xl shadow" />}
                                     <div className={`flex flex-col justify-center text-black bg-white p-8 shadow ${index % 2 === 0 ? "rounded-lg md:rounded-3xl md:rounded-tl-none md:rounded-br-none" : "rounded-lg md:rounded-3xl md:rounded-tr-none md:rounded-bl-none"}`}>
                                         <p className="text-base md:text-xl xl:text-2xl text-gray-700">{conference.date}</p>
                                         <h2 className="text-lg md:text-2xl xl:text-3xl text-duke font-semibold mt-2 mb-4">{conference.name}</h2>
@@ -503,7 +506,7 @@ export default function Experience() {
                                             ))}
                                         </ul>
                                     </div>
-                                    {(index % 2 === 0 || window?.innerWidth < 1024) && <img src={conference.image} alt="" className="w-full md:w-[40%] mx-auto object-contain rounded-lg md:rounded-3xl md:rounded-tr-none md:rounded-bl-none shadow" />}
+                                    {(index % 2 === 0 || (isBrowser && window.innerWidth < 1024)) && <img src={conference.image} alt="" className="w-full md:w-[40%] mx-auto object-contain rounded-lg md:rounded-3xl md:rounded-tr-none md:rounded-bl-none shadow" />}
                                 </div>
                             ))}
                         </div>         

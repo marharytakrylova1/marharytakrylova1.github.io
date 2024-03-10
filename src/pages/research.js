@@ -21,8 +21,10 @@ import brain_top from "../images/brain_top.png"
 
 export default function Research() {
     const [rightWidth, setRightWidth] = useState(0)
+    const isBrowser = typeof window !== "undefined"
 
     useEffect(() => {
+        if(!isBrowser) return false
         document.title = "Research | Marharyta Krylova";
         // Add resize event listener
         window.addEventListener("resize", () => {

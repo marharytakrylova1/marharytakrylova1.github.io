@@ -27,18 +27,22 @@ import Layout from "../components/layout"
 
 export default function IndexPage() {
   const [margoWidth, setMargoWidth] = useState(0);
+  const isBrowser = typeof window !== "undefined"
 
   useEffect(() => {
+    if (!isBrowser) return false;
     document.title = "Marharyta Krylova";
     // Add resize event listener
-    window?.addEventListener("resize", () => setMargoWidth(document?.getElementById("margo")?.clientWidth));
+    window.addEventListener("resize", () => setMargoWidth(document?.getElementById("margo")?.clientWidth));
     setMargoWidth(document?.getElementById("margo")?.clientWidth);
 
     // Remove resize event listener
-    return () => window?.removeEventListener("resize", () => setMargoWidth(document?.getElementById("margo")?.clientWidth));
+    return () => window.removeEventListener("resize", () => setMargoWidth(document?.getElementById("margo")?.clientWidth));
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
+    if (!isBrowser) return false;
+
     let margo = document.getElementById("margo");
     let margo_bound = margo.getBoundingClientRect();
     let margo_x = (margo_bound.left + margo_bound.right) / 2;
