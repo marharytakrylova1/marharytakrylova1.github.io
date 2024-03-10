@@ -295,9 +295,9 @@ export default function Experience() {
             <Layout>
                 {/* Landing */}
                 <div className="relative h-screen w-full">
-                    <div className="flex flex-row justify-center items-center h-full w-full">
-                        <div className="w-1/2 flex flex-col justify-center items-center">
-                            <div className="max-w-xl mx-12">
+                    <div className="flex flex-col md:flex-row justify-center md:justify-center items-center h-full w-full">
+                        <div className="w-11/12 md:w-1/2 flex flex-col justify-center items-center">
+                            <div className="max-w-xl mx-8 md:mx-12">
                                 <div className="w-min">
                                     <h1 className="text-5xl font-semibold">Experience</h1>
                                     <div className="w-[40%] h-1 mt-2 bg-duke" />
@@ -306,7 +306,7 @@ export default function Experience() {
                                 and a commitment to dismantling barriers in medicine through increased representation and inclusivity. </p>
                             </div>
                         </div>
-                        <div id="right" className="relative w-1/2 h-full flex flex-col justify-center items-center overflow-hidden">
+                        <div id="right" className="relative w-full md:w-1/2 h-1/2 md:h-full flex flex-col justify-center items-center overflow-hidden">
                             <img src={margo_experience} alt="" className="absolute w-[60%] bottom-[15%]" />
                             <div className="absolute bottom-0 -right-24 w-[150%] h-1/6 transform rotate-[-20deg]">
                                 <PurpleRipple bg="transparent" />
@@ -321,13 +321,9 @@ export default function Experience() {
 
                 {/* Employment */}
                 <h1 id="employment" className="text-5xl font-semibold pt-24 pb-12 text-center">Employment</h1>
-                <div className="max-w-12xl grid grid-cols-2 grid-rows-3 mx-auto px-12">
-                    <div className="relative bg-duke rounded-3xl rounded-br-none py-12 flex flex-col justify-center">
-                        <img src={duke_health_logo} alt="Duke Health logo" className="w-1/2 ml-[5%]" />
-                        <img src={duke_health_tubes} alt="Test tubes containing blood" className="w-1/2 mr-[5%] ml-auto -mt-[10%]" /> 
-                    </div>
-                    <div className="relative flex flex-col justify-center px-20 py-8">
-                        <div className="absolute bottom-0 left-0 h-12 w-12 bg-duke" >
+                <div className="max-w-12xl grid grid-cols-1 md:grid-cols-2 grid-rows-6 md:grid-rows-3 mx-auto px-8 md:px-12">
+                    <div className="relative flex md:hidden flex-col justify-center px-0 md:px-20 py-8">
+                        <div className="hidden md:block absolute bottom-0 left-0 h-12 w-12 bg-duke" >
                             <div className="h-full w-full rounded-bl-full bg-white" />
                         </div>
                         <p className="text-xl xl:text-2xl text-gray-700">Feb 2024 - Present</p>
@@ -346,11 +342,35 @@ export default function Experience() {
                                 ensuring meticulous compliance with regulatory standards</li>
                         </ul>
                     </div>
-                    <div className="relative flex flex-col justify-center px-20 py-8">
-                        <div className="absolute top-0 right-0 h-12 w-12 bg-duke" >
+                    <div className="relative bg-duke rounded-3xl md:rounded-br-none py-12 flex flex-col justify-center">
+                        <img src={duke_health_logo} alt="Duke Health logo" className="w-1/2 ml-[5%]" />
+                        <img src={duke_health_tubes} alt="Test tubes containing blood" className="w-1/2 mr-[5%] ml-auto -mt-[10%]" /> 
+                    </div>
+                    <div className="relative hidden md:flex flex-col justify-center px-0 md:px-20 py-8">
+                        <div className="hidden md:block absolute bottom-0 left-0 h-12 w-12 bg-duke" >
+                            <div className="h-full w-full rounded-bl-full bg-white" />
+                        </div>
+                        <p className="text-xl xl:text-2xl text-gray-700">Feb 2024 - Present</p>
+                        <h2 className="text-2xl xl:text-3xl font-semibold mt-2 mb-4">Duke University Health System</h2>
+                        <p className="text-xl xl:text-2xl font-semibold mb-4">Clinical Technician II - Phlebotomy</p>
+                        <ul className="text-sm xl:text-xl list-disc ml-8">
+                            <li>Executed precise blood specimen collection, ensuring patient comfort and 
+                                satisfaction in an in-patient environment </li>
+                            <li>Utilized rigorous infection control measures, mitigating 
+                                contamination risks effectively</li>
+                            <li>Vigilantly verified and labeled specimens, increasing 
+                                the reliability of laboratory results</li>
+                            <li>Collaborated with healthcare professionals, while educating and 
+                                reassuring patients for a cohesive and informed environment</li>
+                            <li>Methodically documented patient information and collection details, 
+                                ensuring meticulous compliance with regulatory standards</li>
+                        </ul>
+                    </div>
+                    <div className="relative flex flex-col justify-center px-0 md:px-20 py-8">
+                        <div className="hidden md:block absolute top-0 right-0 h-12 w-12 bg-duke" >
                             <div className="h-full w-full rounded-tr-full bg-white" />
                         </div>
-                        <div className="absolute bottom-0 right-0 h-12 w-12 bg-duke" >
+                        <div className="hidden md:block absolute bottom-0 right-0 h-12 w-12 bg-duke" >
                             <div className="h-full w-full rounded-br-full bg-white" />
                         </div>
                         <p className="text-xl xl:text-2xl text-gray-700">Jun 2023 - Aug 2023</p>
@@ -366,16 +386,31 @@ export default function Experience() {
                                 visits and coordinating with the student health center for injuries</li>
                         </ul>
                     </div>
-                    <div className="relative bg-duke rounded-3xl rounded-tl-none rounded-bl-none py-12 flex flex-col justify-center">
+                    <div className="relative bg-duke rounded-3xl md:rounded-tl-none md:rounded-bl-none py-12 flex flex-col justify-center">
                         <img src={ysp_group} alt="YSP summer 2023 cohort" className="w-1/2 ml-[5%]" />
                         <img src={ysp_posters} alt="YSP summer 2023 cohort poster session" className="w-1/2 mr-[5%] ml-auto -mt-[10%]" /> 
                     </div>
-                    <div className="relative bg-duke rounded-3xl rounded-tr-none py-12 flex flex-col justify-center">
+                    <div className="relative flex md:hidden flex-col justify-center px-0 md:px-20 py-8">
+                        <div className="hidden md:block absolute top-0 left-0 h-12 w-12 bg-duke" >
+                            <div className="h-full w-full rounded-tl-full bg-white" />
+                        </div>
+                        <p className="text-xl xl:text-2xl text-gray-700">May 2022 - Aug 2023</p>
+                        <h2 className="text-2xl xl:text-3xl font-semibold mt-2 mb-4">Gary Munson Heating & Air Conditioning Services</h2>
+                        <p className="text-xl xl:text-2xl font-semibold mb-4">Dispatch Coordinator & Accounts Receivable</p>
+                        <ul className="text-sm xl:text-xl list-disc ml-8">
+                            <li>Optimized operational efficiency by developing procedural flow charts for technicians</li>
+                            <li>Managed payment collection</li>
+                            <li>Efficiently coordinated dispatch for ~15 technicians</li>
+                            <li>AServed as a bridge between field technicians and the office team, ensuring seamless 
+                                communication and fostering a high level of customer satisfaction</li>
+                        </ul>
+                    </div>
+                    <div className="relative bg-duke rounded-3xl md:rounded-tr-none py-12 flex flex-col justify-center">
                         <img src={munson_logo} alt="Gary Munson Heating and A/C Services logo" className="w-1/2 ml-[5%]" />
                         <img src={munson_computer} alt="Person typing on a computer" className="w-1/2 mr-[5%] ml-auto -mt-[10%]" /> 
                     </div>
-                    <div className="relative flex flex-col justify-center px-20 py-8">
-                        <div className="absolute top-0 left-0 h-12 w-12 bg-duke" >
+                    <div className="relative hidden md:flex flex-col justify-center px-0 md:px-20 py-8">
+                        <div className="hidden md:block absolute top-0 left-0 h-12 w-12 bg-duke" >
                             <div className="h-full w-full rounded-tl-full bg-white" />
                         </div>
                         <p className="text-xl xl:text-2xl text-gray-700">May 2022 - Aug 2023</p>
@@ -393,8 +428,8 @@ export default function Experience() {
 
                 {/* Programs */}
                 <h1 id="programs" className="text-5xl font-semibold pt-24 pb-12 text-center">Programs</h1>
-                <div className="max-w-12xl px-12 mx-auto">
-                    <div className="relative grid grid-cols-2 grid-rows-2 gap-12 p-20 bg-light rounded-3xl shadow overflow-hidden">
+                <div className="max-w-12xl px-8 md:px-12 mx-auto">
+                    <div className="relative grid grid-cols-1 md:grid-cols-2 grid-rows-4 md:grid-rows-2 gap-12 p-8 md:p-20 bg-light rounded-3xl shadow overflow-hidden">
                         {/* Background auras */}
                         <div className="absolute top-0 left-0 w-1/2 h-1/2">
                             <Aura width={rightWidth} height={rightWidth / 2} deg={-45} zIndex={1} />
@@ -403,16 +438,16 @@ export default function Experience() {
                             <Aura width={rightWidth} height={rightWidth} deg={45} zIndex={1} />
                         </div>
                         {programs.map((program, index) => (
-                            <div key={index} className="flex flex-col justify-between p-12 z-10 bg-white rounded-xl shadow">
-                                <div className="flex flex-row justify-between space-x-12">
+                            <div key={index} className="flex flex-col justify-between p-6 md:p-12 z-10 bg-white rounded-xl shadow">
+                                <div className="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 space-x-0 md:space-x-12 pb-4 md:pb-0">
                                     <div>
-                                        <p className="text-xl xl:text-2xl text-gray-700">{program.dates}</p>
-                                        <h2 className="text-2xl xl:text-3xl font-semibold mt-2 mb-4">{program.name}</h2>
+                                        <p className="text-base md:text-xl xl:text-2xl text-gray-700">{program.dates}</p>
+                                        <h2 className="text-lg md:text-2xl xl:text-3xl font-semibold mt-2 mb-4">{program.name}</h2>
                                     </div>
-                                    <img src={program.image} alt="" className="max-h-24 xl:max-h-32 max-w-28 xl:max-w-36 object-contain" />
+                                    <img src={program.image} alt="" className="max-h-16 md:max-h-24 xl:max-h-32 max-w-20 md:max-w-28 xl:max-w-36 object-contain" />
                                 </div>
-                                <p className="text-xl xl:text-2xl font-semibold mb-4">{program.subtitle}</p>
-                                <ul className="text-sm xl:text-xl list-disc ml-8">
+                                <p className="text-base md:text-xl xl:text-2xl font-semibold mb-4">{program.subtitle}</p>
+                                <ul className="text-xs md:text-sm xl:text-xl list-disc ml-8">
                                     {program.actions.map((action, index) => (
                                         <li key={index}>{action}</li>
                                     ))}
@@ -424,19 +459,19 @@ export default function Experience() {
 
                 {/* Clinical Shadowing */}
                 <h1 id="shadowing" className="text-5xl font-semibold pt-24 pb-12 text-center">Clinical Shadowing</h1>
-                <div className="flex flex-row items-center max-w-12xl px-12 mx-auto">
-                    <button onClick={() => handleCarousel("left")} className="w-16 mx-8 transform rotate-180 hover:scale-105 transition-all duration-200"><img src={arrow} alt="Previous"/></button>
+                <div className="flex flex-row items-center max-w-12xl px-2 md:px-12 mx-auto">
+                    <button onClick={() => handleCarousel("left")} className="w-8 md:w-16 mx-2 md:mx-8 transform rotate-180 hover:scale-105 transition-all duration-200"><img src={arrow} alt="Previous"/></button>
                     <div id="carousel" className="grid grid-flow-col gap-x-12 w-full overflow-hidden">
                         {shadowing.map((shadow, index) => (
                             <div key={index} style={{ width: pageWidth, transform: `translateX(${translateDistance}px)` }} className="bg-light p-4 rounded-xl flex flex-col justify-between shadow text-duke transition-all duration-300">
                                 <div className="flex flex-row justify-between">
-                                    <p className="text-base xl:text-lg font-semibold">{shadow.dates}</p>
-                                    <p className="text-base xl:text-lg font-semibold">{shadow.tot_time}</p>
+                                    <p className="text-sm md:text-base xl:text-lg font-semibold">{shadow.dates}</p>
+                                    <p className="text-sm md:text-base xl:text-lg font-semibold">{shadow.tot_time}</p>
                                 </div>
-                                <p className="text-2xl xl:text-3xl  font-bold text-center my-4">{shadow.name}</p>
-                                <p className="text-base xl:text-xl text-black text-center mx-12">{shadow.subtitle}</p>
-                                <p className="text-base xl:text-xl font-semibold my-4">{shadow.times}</p>
-                                <ul className="text-sm xl:text-xl list-disc bg-white rounded-xl p-4 shadow">
+                                <p className="text-xl md:text-2xl xl:text-3xl  font-bold text-center my-2 md:my-4">{shadow.name}</p>
+                                <p className="text-sm md:text-base xl:text-xl text-black text-center mx-6 md:mx-12">{shadow.subtitle}</p>
+                                <p className="text-sm md:text-base xl:text-xl font-semibold my-2 md:my-4">{shadow.times}</p>
+                                <ul className="text-xs md:text-sm xl:text-xl list-disc bg-white rounded-xl p-3 md:p-4 shadow">
                                     {shadow.actions.map((action, index) => (
                                         <li className="ml-8 text-black" key={index}>{action}</li>
                                     ))}
@@ -445,7 +480,7 @@ export default function Experience() {
                         ))}
 
                     </div>
-                    <button onClick={() => handleCarousel("right")} className="w-16 mx-8 transform hover:scale-105 transition-all duration-200"><img src={arrow} alt="Next" /></button>
+                    <button onClick={() => handleCarousel("right")} className="w-8 md:w-16 mx-4 md:mx-8 transform hover:scale-105 transition-all duration-200"><img src={arrow} alt="Next" /></button>
                 </div>
 
                 {/* Conferences  */}
@@ -453,23 +488,22 @@ export default function Experience() {
                 <PurpleRipple />
                 <div className="bg-purple text-white">
                     <h1 className="text-5xl font-semibold pt-12 pb-12 text-center">Selective Conferences</h1>
-
-                    <div className="max-w-9xl px-12 mx-auto">
-                        <div className="flex flex-col space-y-16">
+                    <div className="max-w-9xl px-8 md:px-12 mx-auto">
+                        <div className="flex flex-col space-y-8 md:space-y-16">
                             {conferences.map((conference, index) => (
-                                <div key={index} className="p-12 flex flex-row justify-center items-center space-x-32">
-                                    {index % 2 === 1 && <img src={conference.image} alt="" className="w-[40%] mx-auto object-contain rounded-tr-3xl rounded-bl-3xl shadow" />}
-                                    <div className={`flex flex-col justify-center text-black bg-white p-8 shadow ${index % 2 === 0 ? "rounded-tr-3xl rounded-bl-3xl" : "rounded-tl-3xl rounded-br-3xl"}`}>
-                                        <p className="text-xl xl:text-2xl text-gray-700">{conference.date}</p>
-                                        <h2 className="text-2xl xl:text-3xl text-duke font-semibold mt-2 mb-4">{conference.name}</h2>
-                                        <p className="text-xl xl:text-2xl font-semibold mb-4">{conference.subheading} {conference.location && `— ${conference.location}`}</p>
-                                        <ul className="text-sm xl:text-xl list-disc ml-8">
+                                <div key={index} className="p-6 md:p-12 flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 space-x-0 md:space-x-32">
+                                    {(index % 2 === 1 && window?.innerWidth >= 1024) && <img src={conference.image} alt="" className="w-full md:w-[40%] mx-auto object-contain rounded-tr-3xl rounded-bl-3xl shadow" />}
+                                    <div className={`flex flex-col justify-center text-black bg-white p-8 shadow ${index % 2 === 0 ? "rounded-lg md:rounded-3xl md:rounded-tl-none md:rounded-br-none" : "rounded-lg md:rounded-3xl md:rounded-tr-none md:rounded-bl-none"}`}>
+                                        <p className="text-base md:text-xl xl:text-2xl text-gray-700">{conference.date}</p>
+                                        <h2 className="text-lg md:text-2xl xl:text-3xl text-duke font-semibold mt-2 mb-4">{conference.name}</h2>
+                                        <p className="text-base md:text-xl xl:text-2xl font-semibold mb-4">{conference.subheading} {conference.location && `— ${conference.location}`}</p>
+                                        <ul className="text-xs md:text-sm xl:text-xl list-disc ml-8">
                                             {conference.actions.map((action, index) => (
                                                 <li key={index}>{action}</li>
                                             ))}
                                         </ul>
                                     </div>
-                                    {index % 2 === 0 && <img src={conference.image} alt="" className="w-[40%] mx-auto object-contain rounded-tl-3xl rounded-br-3xl shadow" />}
+                                    {(index % 2 === 0 || window?.innerWidth < 1024) && <img src={conference.image} alt="" className="w-full md:w-[40%] mx-auto object-contain rounded-lg md:rounded-3xl md:rounded-tr-none md:rounded-bl-none shadow" />}
                                 </div>
                             ))}
                         </div>         
