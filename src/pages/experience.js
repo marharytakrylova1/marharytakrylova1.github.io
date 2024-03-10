@@ -61,17 +61,19 @@ export default function Experience() {
     useEffect(() => {
         document.title = "Experience | Marharyta Krylova";
         // Add resize event listener
-        window.addEventListener("resize", () => {
-            setRightWidth(document.getElementById("right")?.clientWidth);
-            setCarouselWidth(document.getElementById("carousel")?.clientWidth);
+        window?.addEventListener("resize", () => {
+            setRightWidth(document?.getElementById("right")?.clientWidth);
+            setCarouselWidth(document?.getElementById("carousel")?.clientWidth);
         });
-        setRightWidth(document.getElementById("right")?.clientWidth);
-        setCarouselWidth(document.getElementById("carousel")?.clientWidth);
+        setRightWidth(document?.getElementById("right")?.clientWidth);
+        setCarouselWidth(document?.getElementById("carousel")?.clientWidth);
 
         // Remove resize event listener
         return () => {
-            setRightWidth(document.getElementById("right")?.clientWidth);
-            setCarouselWidth(document.getElementById("carousel")?.clientWidth);
+            window?.removeEventListener("resize", () => {
+            setRightWidth(document?.getElementById("right")?.clientWidth);
+            setCarouselWidth(document?.getElementById("carousel")?.clientWidth)
+        });
         };
       }, []);
 
@@ -423,7 +425,7 @@ export default function Experience() {
                 {/* Clinical Shadowing */}
                 <h1 id="shadowing" className="text-5xl font-semibold pt-24 pb-12 text-center">Clinical Shadowing</h1>
                 <div className="flex flex-row items-center max-w-12xl px-12 mx-auto">
-                    <button onClick={() => handleCarousel("left")} className="w-16 mx-8 transform hover:scale-105 transition-all duration-200"><img src={arrow} alt="Previous"/></button>
+                    <button onClick={() => handleCarousel("left")} className="w-16 mx-8 transform rotate-180 hover:scale-105 transition-all duration-200"><img src={arrow} alt="Previous"/></button>
                     <div id="carousel" className="grid grid-flow-col gap-x-12 w-full overflow-hidden">
                         {shadowing.map((shadow, index) => (
                             <div key={index} style={{ width: pageWidth, transform: `translateX(${translateDistance}px)` }} className="bg-light p-4 rounded-xl flex flex-col justify-between shadow text-duke transition-all duration-300">
@@ -443,7 +445,7 @@ export default function Experience() {
                         ))}
 
                     </div>
-                    <button onClick={() => handleCarousel("right")} className="w-16 mx-8 transform hover:scale-105 transition-all duration-200 rotate-180"><img src={arrow} alt="Next" /></button>
+                    <button onClick={() => handleCarousel("right")} className="w-16 mx-8 transform hover:scale-105 transition-all duration-200"><img src={arrow} alt="Next" /></button>
                 </div>
 
                 {/* Conferences  */}

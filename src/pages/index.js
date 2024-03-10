@@ -31,11 +31,11 @@ export default function IndexPage() {
   useEffect(() => {
     document.title = "Marharyta Krylova";
     // Add resize event listener
-    window.addEventListener("resize", () => setMargoWidth(document.getElementById("margo").clientWidth));
-    setMargoWidth(document.getElementById("margo").clientWidth);
+    window?.addEventListener("resize", () => setMargoWidth(document?.getElementById("margo")?.clientWidth));
+    setMargoWidth(document?.getElementById("margo")?.clientWidth);
 
     // Remove resize event listener
-    return () => window.removeEventListener("resize", () => setMargoWidth(document.getElementById("margo").clientWidth));
+    return () => window?.removeEventListener("resize", () => setMargoWidth(document?.getElementById("margo")?.clientWidth));
   }, []);
 
   React.useEffect(() => {
@@ -236,7 +236,7 @@ export default function IndexPage() {
 
         {/* About section */}
         <div className="w-full bg-duke text-white text-center">
-          <p className="text-4xl font-semibold">About Me</p>
+          <p className="text-5xl font-semibold text-center">About Me</p>
           <p className="px-24 max-w-[120ch] mx-auto pt-4 pb-8">I am a Duke University student, majoring in Neuroscience, and minoring in Chemistry and Russian. 
           Dedicated to achieving my goal of becoming a competent physician, I find particular interest in neurosurgery. I am also deeply 
           interested in healthcare strategy and the intersection between business/finance and healthcare. My career aspirations include 
@@ -249,24 +249,24 @@ export default function IndexPage() {
         <div id="education" />
         <BlueRipple bg="#F9F9F9" rotation={180} />
         <div className="bg-light pb-24">
-          <p className="text-4xl text-center font-semibold pt-8 pb-12">Education</p>
+          <p className="text-5xl font-semibold pt-12 pb-12 text-center">Education</p>
           <div className="grid grid-cols-3 gap-8 px-16 mx-auto max-w-9xl">
             {education.map((school) => (
               <div className="bg-white rounded-2xl p-6 flex flex-col justify-around space-y-4 shadow">
                 <div className="flex flex-row items-center space-x-4">
                   <img src={school.logo} alt="Duke Logo" className="w-1/2 max-h-32" />
                   <div>
-                    <p className="text-2xl font-semibold">{school.name}</p>
-                    <p className="text-lg">{school.time}</p>
+                    <p className="text-xl xl:text-2xl font-semibold">{school.name}</p>
+                    <p className="text-lg xl:text-xl text-gray-700">{school.time}</p>
                   </div>
 
                 </div>
                 <div className="font-semibold">
                 {school.heading.split("\n").map((line) => (
-                  <p className="text-lg">{line}</p>
+                  <p className="text-base xl:text-lg">{line}</p>
                 ))}
                 </div>
-                <p className="text-lg">Relevant Coursework:<br />{school.coursework}</p>
+                <p className="text-base xl:text-lg">Relevant Coursework:<br />{school.coursework}</p>
               </div>
             ))}
           </div>
@@ -276,21 +276,21 @@ export default function IndexPage() {
         <div id="certifications" />
         <PurpleRipple bg="#F9F9F9" />
         <div className="bg-purple pb-24">
-          <p className="text-4xl text-white text-center font-semibold pt-8 pb-12">Certifications</p>
+          <p className="text-5xl font-semibold pt-12 pb-12 text-center text-white">Certifications</p>
           <div className="grid grid-cols-2 gap-8 w-3/4 mx-auto max-w-7xl">
             {certifications.map((cert) => (
               <div className="bg-white rounded-2xl p-8 flex flex-col justify-around space-y-4 shadow">
-                  <p className="text-2xl text-duke font-semibold">{cert.name}</p>
-                  <p className="text-lg font-semibold">{cert.organization}</p>
+                  <p className="text-xl xl:text-2xl font-semibold text-duke">{cert.name}</p>
+                  <p className="text-base xl:text-lg font-semibold">{cert.organization}</p>
                   <div className="flex flex-row justify-between">
                     <div>
-                      <p className="text-lg">Credential ID:<br /></p>
+                      <p className="text-base xl:text-lg">Credential ID:<br /></p>
                       {cert.cred_id.split("\n").map((line) => (
                         <p>{line}</p>
                       ))}
                     </div>
                     <a href={cert.link} target="_blank" rel="noreferrer">
-                      <img src={cert.image} alt="Certification" className="h-24" />
+                      <img src={cert.image} alt="Certification" className="h-20 xl:h-24" />
                     </a>
                   </div>
                 </div>
@@ -301,15 +301,15 @@ export default function IndexPage() {
 
         {/* Languages section */}
         <div id="languages" className="pb-24">
-          <p className="text-4xl text-center font-semibold pt-8 pb-12">Languages</p>
-          <div className="grid grid-cols-3 gap-8 w-3/4 mx-auto max-w-8xl">
+          <p className="text-5xl font-semibold pt-12 pb-12 text-center">Languages</p>
+          <div className="grid grid-cols-2 xl:grid-cols-3 gap-8 w-3/4 mx-auto max-w-8xl">
             {languages.map((lang) => (
               <div className="bg-white rounded-2xl p-8 flex flex-row justify-between items-center space-x-4 shadow">
                 <div>
-                  <p className="text-2xl font-semibold">{lang.name}</p>
-                  <p className="text-lg">{lang.prof}</p>
+                  <p className="text-xl xl:text-2xl font-semibold">{lang.name}</p>
+                  <p className="text-base xl:text-lg">{lang.prof}</p>
                 </div>
-                <img src={lang.image} alt="Language" className="max-h-20" />
+                <img src={lang.image} alt="Language" className="h-16 xl:h-20" />
               </div>
             ))}
           </div>

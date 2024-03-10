@@ -26,9 +26,9 @@ export default function Research() {
         document.title = "Research | Marharyta Krylova";
         // Add resize event listener
         window.addEventListener("resize", () => {
-            setRightWidth(document.getElementById("right").clientWidth);
+            setRightWidth(document?.getElementById("right")?.clientWidth);
         });
-        setRightWidth(document.getElementById("right").clientWidth);
+        setRightWidth(document?.getElementById("right")?.clientWidth);
 
         // Remove resize event listener
         return () => window.removeEventListener("resize", () => setRightWidth(document.getElementById("margo").clientWidth));
@@ -109,7 +109,7 @@ export default function Research() {
             <Layout>
                 {/* Landing */}
                 <div className="h-[85vh] w-full flex flex-row justify-center items-center">
-                    <div className="w-1/2 flex flex-col justify-center items-center">
+                    <div className="w-1/2 mx-12 flex flex-col justify-center items-center">
                         <div className="max-w-xl">
                             <div className="w-min">
                                 <h1 className="text-5xl font-semibold">Research</h1>
@@ -122,7 +122,7 @@ export default function Research() {
                         </div>
                     </div>
                     <div id="right" className="relative w-1/2 h-full flex flex-col justify-center items-center">
-                        <img src={margo_research} alt="" className="absolute w-[45%] bottom-0" />
+                        <img src={margo_research} alt="" className="absolute w-[60%] xl:w-[45%] bottom-0" />
                         <div className="absolute -z-10 top-1/2 left-1/2 transform -translate-x-[30%] -translate-y-1/2">
                             <Aura width={rightWidth / 2} height={rightWidth} />
                         </div>
@@ -138,10 +138,10 @@ export default function Research() {
                     {current_research.map((research, index) => (
                         <div key={index} className="flex flex-row justify-between items-center">
                             <div className="w-[50%] flex flex-col space-y-4">
-                                <p className="text-xl">{research.dates}</p>
-                                <h2 className="text-3xl font-semibold">{research.name}</h2>
-                                <p className="text-xl">{research.subtitle}</p>
-                                <ul className="text-xl list-disc ml-8">
+                                <p className="text-lg xl:text-xl text-gray-700">{research.dates}</p>
+                                <h2 className="text-2xl xl:text-3xl font-semibold">{research.name}</h2>
+                                <p className="text-lg xl:text-2xl font-semibold">{research.subtitle}</p>
+                                <ul className="text-sm xl:text-xl list-disc ml-8">
                                     {research.actions.map((action, index) => (
                                         <li key={index}>{action}</li>
                                     ))}
@@ -165,10 +165,10 @@ export default function Research() {
                     <div className="w-10/12 max-w-12xl mx-auto grid grid-cols-2 gap-12 bg-light">
                         {past_research.map((research, index) => (
                             <div key={index} className="flex flex-col justify-between space-y-4 bg-white p-8 rounded-lg shadow">
-                                <p className="text-xl">{research.dates}</p>
-                                <h2 className="text-3xl font-semibold">{research.name}</h2>
-                                <p className="text-xl">{research.subtitle}</p>
-                                <ul className="text-xl list-disc ml-8">
+                                <p className="text-lg xl:text-xl text-gray-700">{research.dates}</p>
+                                <h2 className="text-2xl xl:text-3xl font-semibold">{research.name}</h2>
+                                <p className="text-lg xl:text-2xl font-semibold">{research.subtitle}</p>
+                                <ul className="text-sm xl:text-xl list-disc ml-8">
                                     {research.actions.map((action, index) => (
                                         <li key={index}>{action}</li>
                                     ))}
