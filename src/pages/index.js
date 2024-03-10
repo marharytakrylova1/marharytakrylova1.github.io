@@ -246,7 +246,8 @@ export default function IndexPage() {
         </div>
 
         {/* Education section */}
-        <BlueRipple id="education" bg="#F9F9F9" rotation={180} />
+        <div id="education" />
+        <BlueRipple bg="#F9F9F9" rotation={180} />
         <div className="bg-light pb-24">
           <p className="text-4xl text-center font-semibold pt-8 pb-12">Education</p>
           <div className="grid grid-cols-3 gap-8 px-16 mx-auto max-w-9xl">
@@ -272,7 +273,8 @@ export default function IndexPage() {
         </div>
 
         {/* Certifications section */}
-        <PurpleRipple id="certifications" bg="#F9F9F9" />
+        <div id="certifications" />
+        <PurpleRipple bg="#F9F9F9" />
         <div className="bg-purple pb-24">
           <p className="text-4xl text-white text-center font-semibold pt-8 pb-12">Certifications</p>
           <div className="grid grid-cols-2 gap-8 w-3/4 mx-auto max-w-7xl">

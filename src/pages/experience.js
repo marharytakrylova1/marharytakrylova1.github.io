@@ -62,14 +62,17 @@ export default function Experience() {
         document.title = "Experience | Marharyta Krylova";
         // Add resize event listener
         window.addEventListener("resize", () => {
-            setRightWidth(document.getElementById("right").clientWidth);
-            setCarouselWidth(document.getElementById("carousel").clientWidth);
+            setRightWidth(document.getElementById("right")?.clientWidth);
+            setCarouselWidth(document.getElementById("carousel")?.clientWidth);
         });
-        setRightWidth(document.getElementById("right").clientWidth);
-        setCarouselWidth(document.getElementById("carousel").clientWidth);
+        setRightWidth(document.getElementById("right")?.clientWidth);
+        setCarouselWidth(document.getElementById("carousel")?.clientWidth);
 
         // Remove resize event listener
-        return () => window.removeEventListener("resize", () => setRightWidth(document.getElementById("margo").clientWidth));
+        return () => {
+            setRightWidth(document.getElementById("right")?.clientWidth);
+            setCarouselWidth(document.getElementById("carousel")?.clientWidth);
+        };
       }, []);
 
     useEffect(() => {
@@ -315,7 +318,7 @@ export default function Experience() {
                 </div>
 
                 {/* Employment */}
-                <h1 className="text-5xl font-semibold pt-24 pb-12 text-center">Employment</h1>
+                <h1 id="employment" className="text-5xl font-semibold pt-24 pb-12 text-center">Employment</h1>
                 <div className="max-w-12xl grid grid-cols-2 grid-rows-3 mx-auto px-12">
                     <div className="relative bg-duke rounded-3xl rounded-br-none py-12 flex flex-col justify-center">
                         <img src={duke_health_logo} alt="Duke Health logo" className="w-1/2 ml-[5%]" />
@@ -387,7 +390,7 @@ export default function Experience() {
                 </div>
 
                 {/* Programs */}
-                <h1 className="text-5xl font-semibold pt-24 pb-12 text-center">Programs</h1>
+                <h1 id="programs" className="text-5xl font-semibold pt-24 pb-12 text-center">Programs</h1>
                 <div className="max-w-12xl px-12 mx-auto">
                     <div className="relative grid grid-cols-2 grid-rows-2 gap-12 p-20 bg-light rounded-3xl shadow overflow-hidden">
                         {/* Background auras */}
@@ -418,7 +421,7 @@ export default function Experience() {
                 </div>
 
                 {/* Clinical Shadowing */}
-                <h1 className="text-5xl font-semibold pt-24 pb-12 text-center">Clinical Shadowing</h1>
+                <h1 id="shadowing" className="text-5xl font-semibold pt-24 pb-12 text-center">Clinical Shadowing</h1>
                 <div className="flex flex-row items-center max-w-12xl px-12 mx-auto">
                     <button onClick={() => handleCarousel("left")} className="w-16 mx-8 transform hover:scale-105 transition-all duration-200"><img src={arrow} alt="Previous"/></button>
                     <div id="carousel" className="grid grid-flow-col gap-x-12 w-full overflow-hidden">
@@ -444,10 +447,10 @@ export default function Experience() {
                 </div>
 
                 {/* Conferences  */}
-                <div className="mt-24" />
+                <div id="conferences" className="mt-24" />
                 <PurpleRipple />
                 <div className="bg-purple text-white">
-                    <h1 className="text-5xl font-semibold pt-12 pb-12 text-center">Conferences</h1>
+                    <h1 className="text-5xl font-semibold pt-12 pb-12 text-center">Selective Conferences</h1>
 
                     <div className="max-w-9xl px-12 mx-auto">
                         <div className="flex flex-col space-y-16">
