@@ -291,11 +291,11 @@ export default function Experience() {
     return (
         <main>
             <Layout>
-
+                {/* Landing */}
                 <div className="relative h-screen w-full">
                     <div className="flex flex-row justify-center items-center h-full w-full">
                         <div className="w-1/2 flex flex-col justify-center items-center">
-                            <div className="max-w-xl">
+                            <div className="max-w-xl mx-12">
                                 <div className="w-min">
                                     <h1 className="text-5xl font-semibold">Experience</h1>
                                     <div className="w-[40%] h-1 mt-2 bg-duke" />
@@ -324,14 +324,14 @@ export default function Experience() {
                         <img src={duke_health_logo} alt="Duke Health logo" className="w-1/2 ml-[5%]" />
                         <img src={duke_health_tubes} alt="Test tubes containing blood" className="w-1/2 mr-[5%] ml-auto -mt-[10%]" /> 
                     </div>
-                    <div className="relative flex flex-col justify-center px-20">
+                    <div className="relative flex flex-col justify-center px-20 py-8">
                         <div className="absolute bottom-0 left-0 h-12 w-12 bg-duke" >
                             <div className="h-full w-full rounded-bl-full bg-white" />
                         </div>
-                        <p className="text-2xl text-gray-700">Feb 2024 - Present</p>
-                        <h2 className="text-3xl font-semibold mt-2 mb-4">Duke University Health System</h2>
-                        <p className="text-2xl font-semibold mb-4">Clinical Technician II - Phlebotomy</p>
-                        <ul className="text-xl list-disc ml-8">
+                        <p className="text-xl xl:text-2xl text-gray-700">Feb 2024 - Present</p>
+                        <h2 className="text-2xl xl:text-3xl font-semibold mt-2 mb-4">Duke University Health System</h2>
+                        <p className="text-xl xl:text-2xl font-semibold mb-4">Clinical Technician II - Phlebotomy</p>
+                        <ul className="text-sm xl:text-xl list-disc ml-8">
                             <li>Executed precise blood specimen collection, ensuring patient comfort and 
                                 satisfaction in an in-patient environment </li>
                             <li>Utilized rigorous infection control measures, mitigating 
@@ -344,17 +344,17 @@ export default function Experience() {
                                 ensuring meticulous compliance with regulatory standards</li>
                         </ul>
                     </div>
-                    <div className="relative flex flex-col justify-center px-20">
+                    <div className="relative flex flex-col justify-center px-20 py-8">
                         <div className="absolute top-0 right-0 h-12 w-12 bg-duke" >
                             <div className="h-full w-full rounded-tr-full bg-white" />
                         </div>
                         <div className="absolute bottom-0 right-0 h-12 w-12 bg-duke" >
                             <div className="h-full w-full rounded-br-full bg-white" />
                         </div>
-                        <p className="text-2xl text-gray-700">Jun 2023 - Aug 2023</p>
-                        <h2 className="text-3xl font-semibold mt-2 mb-4">Florida State University Young Scholar's Program</h2>
-                        <p className="text-2xl font-semibold mb-4">Head Counselor (STEM-Research Program)</p>
-                        <ul className="text-xl list-disc ml-8">
+                        <p className="text-xl xl:text-2xl text-gray-700">Jun 2023 - Aug 2023</p>
+                        <h2 className="text-2xl xl:text-3xl font-semibold mt-2 mb-4">Florida State University Young Scholar's Program</h2>
+                        <p className="text-xl xl:text-2xl font-semibold mb-4">Head Counselor (STEM-Research Program)</p>
+                        <ul className="text-sm xl:text-xl list-disc ml-8">
                             <li>Mentored 40 high-school incoming seniors and offered comprehensive 
                                 tutoring in Biology and Research coursework</li>
                             <li>Coordinated and managed after-class programming and weekend trips</li>
@@ -372,14 +372,14 @@ export default function Experience() {
                         <img src={munson_logo} alt="Gary Munson Heating and A/C Services logo" className="w-1/2 ml-[5%]" />
                         <img src={munson_computer} alt="Person typing on a computer" className="w-1/2 mr-[5%] ml-auto -mt-[10%]" /> 
                     </div>
-                    <div className="relative flex flex-col justify-center px-20">
+                    <div className="relative flex flex-col justify-center px-20 py-8">
                         <div className="absolute top-0 left-0 h-12 w-12 bg-duke" >
                             <div className="h-full w-full rounded-tl-full bg-white" />
                         </div>
-                        <p className="text-2xl text-gray-700">May 2022 - Aug 2023</p>
-                        <h2 className="text-3xl font-semibold mt-2 mb-4">Gary Munson Heating & Air Conditioning Services</h2>
-                        <p className="text-2xl font-semibold mb-4">Dispatch Coordinator & Accounts Receivable</p>
-                        <ul className="text-xl list-disc ml-8">
+                        <p className="text-xl xl:text-2xl text-gray-700">May 2022 - Aug 2023</p>
+                        <h2 className="text-2xl xl:text-3xl font-semibold mt-2 mb-4">Gary Munson Heating & Air Conditioning Services</h2>
+                        <p className="text-xl xl:text-2xl font-semibold mb-4">Dispatch Coordinator & Accounts Receivable</p>
+                        <ul className="text-sm xl:text-xl list-disc ml-8">
                             <li>Optimized operational efficiency by developing procedural flow charts for technicians</li>
                             <li>Managed payment collection</li>
                             <li>Efficiently coordinated dispatch for ~15 technicians</li>
@@ -401,16 +401,16 @@ export default function Experience() {
                             <Aura width={rightWidth} height={rightWidth} deg={45} zIndex={1} />
                         </div>
                         {programs.map((program, index) => (
-                            <div key={index} className="flex flex-col justify-center p-12 z-10 bg-white rounded-xl shadow">
+                            <div key={index} className="flex flex-col justify-between p-12 z-10 bg-white rounded-xl shadow">
                                 <div className="flex flex-row justify-between space-x-12">
                                     <div>
-                                        <p className="text-2xl text-gray-700">{program.dates}</p>
-                                        <h2 className="text-3xl font-semibold mt-2 mb-4">{program.name}</h2>
+                                        <p className="text-xl xl:text-2xl text-gray-700">{program.dates}</p>
+                                        <h2 className="text-2xl xl:text-3xl font-semibold mt-2 mb-4">{program.name}</h2>
                                     </div>
-                                    <img src={program.image} alt="" className="max-h-32 max-w-36 object-contain" />
+                                    <img src={program.image} alt="" className="max-h-24 xl:max-h-32 max-w-28 xl:max-w-36 object-contain" />
                                 </div>
-                                <p className="text-2xl font-semibold mb-4">{program.subtitle}</p>
-                                <ul className="text-xl list-disc ml-8">
+                                <p className="text-xl xl:text-2xl font-semibold mb-4">{program.subtitle}</p>
+                                <ul className="text-sm xl:text-xl list-disc ml-8">
                                     {program.actions.map((action, index) => (
                                         <li key={index}>{action}</li>
                                     ))}
@@ -427,14 +427,14 @@ export default function Experience() {
                     <div id="carousel" className="grid grid-flow-col gap-x-12 w-full overflow-hidden">
                         {shadowing.map((shadow, index) => (
                             <div key={index} style={{ width: pageWidth, transform: `translateX(${translateDistance}px)` }} className="bg-light p-4 rounded-xl flex flex-col justify-between shadow text-duke transition-all duration-300">
-                                <div className="flex flex-rowjustify-between">
-                                    <p className="text-lg font-semibold">{shadow.dates}</p>
-                                    <p className="text-lg font-semibold">{shadow.tot_time}</p>
+                                <div className="flex flex-row justify-between">
+                                    <p className="text-base xl:text-lg font-semibold">{shadow.dates}</p>
+                                    <p className="text-base xl:text-lg font-semibold">{shadow.tot_time}</p>
                                 </div>
-                                <p className="text-3xl font-bold text-center my-4">{shadow.name}</p>
-                                <p className="text-xl text-black text-center mx-12">{shadow.subtitle}</p>
-                                <p className="text-xl font-semibold my-4">{shadow.times}</p>
-                                <ul className="text-xl list-disc bg-white rounded-xl p-4 shadow">
+                                <p className="text-2xl xl:text-3xl  font-bold text-center my-4">{shadow.name}</p>
+                                <p className="text-base xl:text-xl text-black text-center mx-12">{shadow.subtitle}</p>
+                                <p className="text-base xl:text-xl font-semibold my-4">{shadow.times}</p>
+                                <ul className="text-sm xl:text-xl list-disc bg-white rounded-xl p-4 shadow">
                                     {shadow.actions.map((action, index) => (
                                         <li className="ml-8 text-black" key={index}>{action}</li>
                                     ))}
@@ -458,10 +458,10 @@ export default function Experience() {
                                 <div key={index} className="p-12 flex flex-row justify-center items-center space-x-32">
                                     {index % 2 === 1 && <img src={conference.image} alt="" className="w-[40%] mx-auto object-contain rounded-tr-3xl rounded-bl-3xl shadow" />}
                                     <div className={`flex flex-col justify-center text-black bg-white p-8 shadow ${index % 2 === 0 ? "rounded-tr-3xl rounded-bl-3xl" : "rounded-tl-3xl rounded-br-3xl"}`}>
-                                        <p className="text-2xl">{conference.date}</p>
-                                        <h2 className="text-3xl text-duke font-semibold mt-2 mb-4">{conference.name}</h2>
-                                        <p className="text-2xl font-semibold mb-4">{conference.subheading} {conference.location && `— ${conference.location}`}</p>
-                                        <ul className="text-xl list-disc ml-8">
+                                        <p className="text-xl xl:text-2xl text-gray-700">{conference.date}</p>
+                                        <h2 className="text-2xl xl:text-3xl text-duke font-semibold mt-2 mb-4">{conference.name}</h2>
+                                        <p className="text-xl xl:text-2xl font-semibold mb-4">{conference.subheading} {conference.location && `— ${conference.location}`}</p>
+                                        <ul className="text-sm xl:text-xl list-disc ml-8">
                                             {conference.actions.map((action, index) => (
                                                 <li key={index}>{action}</li>
                                             ))}
