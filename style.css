@@ -428,7 +428,6 @@ ul {
     color: var(--primary-color);
     position: relative;
     display: inline-block;
-    width: 100%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -690,25 +689,105 @@ ul {
     margin-top: 1rem;
 }
 
-/* Experience Section Specific */
+
+/* --- Global Timeline & Experience Layout --- */
+.experience-layout {
+    display: grid;
+    grid-template-columns: 80px 1fr; /* Fixed timeline width, fluid content */
+    gap: 2rem;
+    position: relative;
+    min-height: 500px;
+}
+
+/* Sticky Timeline Container */
+.global-timeline-container {
+    position: sticky;
+    top: 150px; /* Offset from sticky header */
+    height: 600px; /* Fixed visual height for the 5-year span */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* The Vertical Line */
+.timeline-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background-color: #e0e0e0;
+    z-index: 0;
+}
+
+/* Highlighting Segment (Controlled by JS) */
+.timeline-highlight {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px; /* Slightly thicker than base line */
+    background-color: transparent; /* Default transparent */
+    z-index: 1;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 2px;
+}
+
+/* Timeline Nodes (Years) */
+.timeline-node {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #ccc; /* Light gray filled default */
+    border-radius: 50%;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.timeline-node.active {
+    transform: translateX(-50%) scale(1.3);
+    /* Color handled by JS via inline style or class modifiers */
+}
+
+/* Year Labels (Pseudo-elements) */
+.timeline-node::before {
+    content: attr(data-year);
+    position: absolute;
+    left: -50px; /* Position to the left */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: var(--light-text);
+    font-weight: 600;
+    width: 40px;
+    text-align: right;
+    transition: color 0.3s ease;
+}
+
+/* Experience List/Items */
 .experience-list {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    /* transition for showing/hiding handled by script/display property */
 }
 
 .experience-item {
-    background: white;
+    background: transparent;
     padding: 2rem;
-    border-radius: 12px;
+    border-radius: 12px; /* Restored card look slightly but keep transparent bg if desired, or white? prompt says "timeline highlighted" not card focus. Let's keep it clean. */
+    background: white; /* Let's give cards back their background for readability against the timeline flow */
+    border: 1px solid rgba(0,0,0,0.05);
     box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+    cursor: default;
 }
 
-.experience-item.no-shadow {
-    box-shadow: none;
-    border: 1px solid var(--border-color);
+.experience-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(0,0,0,0.1);
 }
 
 .exp-header {
@@ -731,6 +810,7 @@ ul {
     color: var(--light-text);
     font-weight: 500;
 }
+
 
 /* Media Grid */
 .media-grid {
@@ -861,5 +941,14 @@ ul {
 
     .nav.active a {
         font-size: 1.2rem;
+    }
+
+    /* Experience Timeline Mobile Fallback */
+    .experience-layout {
+        grid-template-columns: 1fr; /* Stack */
+    }
+    
+    .global-timeline-container {
+        display: none; /* Hide fancy visualizer on small screens or adjust */
     }
 }
