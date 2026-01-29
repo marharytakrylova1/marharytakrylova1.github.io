@@ -379,6 +379,23 @@ ul {
     line-height: 1.7;
 }
 
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.hero-social-link {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.hero-social-link:hover {
+    color: #0077b5; /* LinkedIn blue */
+    transform: translateY(-2px);
+}
+
 /* Updated Image Styling */
 .hero-image {
     flex: 1;
