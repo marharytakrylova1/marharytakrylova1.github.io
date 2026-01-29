@@ -445,6 +445,7 @@ ul {
     color: var(--primary-color);
     position: relative;
     display: inline-block;
+    width: 100%;
     left: 50%;
     transform: translateX(-50%);
 }
