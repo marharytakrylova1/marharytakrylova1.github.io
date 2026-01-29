@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marharyta (Margarita) Krylova | Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">Margarita Krylova</a>
+            <nav class="nav">
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#experience">Experience</a>
+                <a href="#research">Research</a>
+                <a href="#awards">Awards</a>
+                <a href="#skills">Skills</a>
+                <a href="#media">Media</a>
+                <a href="#contact">Contact</a>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle">Download Resume</button>
+                    <div class="dropdown-menu">
+                        <a href="resume-consultant.pdf" download>Consultant Resume</a>
+                        <a href="resume-clinical.pdf" download>Clinical Researcher Resume</a>
+                    </div>
+                </div>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Margarita Krylova</h1>
+                    <p class="legal-name">(Legal Name: Marharyta Krylova)</p>
+                    <p class="hero-subtitle">Bioethics Master's Student @ Harvard Medical School | Neuroscience Graduate @ Duke University</p>
+                    <p class="hero-text">Dedicated to exploring the intersection of clinical practice, AI in medicine, and medical ethics.</p>
+                    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+                </div>
+                <div class="hero-image">
+                    <div class="img-wrapper">
+                        <img src="profile.png" alt="Margarita Krylova">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="section-content">
+                    <p>I am a Master of Science in Bioethics student at Harvard Medical School and a Neuroscience graduate from Duke University. My work bridges the gap between clinical innovation and ethical responsibility, with a specific focus on AI in healthcare and neurosurgery. Through research, clinical practice, and leadership, I aim to ensure that medical advancements serve patients equitably and compassionately.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h3>Harvard Medical School</h3>
+                        <p class="date">Expected May 2026</p>
+                        <p class="degree">Master of Science, Bioethics</p>
+                        <p class="details"><strong>GPA (1st Semester):</strong> 4.0</p>
+                        <p class="details"><strong>Capstone:</strong> "A Patient Decision Aid for Artificial Intelligence in Healthcare: Balancing Autonomy, Trust, and Choice"</p>
+                        <p class="details"><strong>Relevant Coursework:</strong> Clinical Ethics, Research Ethics, Foundations of Bioethics</p>
+                    </div>
+                    <div class="education-card">
+                        <h3>Duke University</h3>
+                        <p class="date">Aug 2022 - May 2025</p>
+                        <p class="degree">Bachelor of Science in Neuroscience</p>
+                        <p class="details">Minors in Chemistry & Russian Literature</p>
+                        <p class="details"><strong>GPA:</strong> 3.7 | <strong>Honors:</strong> Graduation with Distinction</p>
+                        <p class="details"><strong>Relevant Coursework:</strong> Leadership in Healthcare, Functional Neuroanatomy, Independent Study, Medical Ethics</p>
+                    </div>
+                    <div class="education-card">
+                        <h3>Valencia College</h3>
+                        <p class="date">Feb 2020 - May 2022</p>
+                        <p class="degree">Associate of Arts Degree</p>
+                        <p class="details"><strong>Honors:</strong> President's List (High Academic Achievement), Phi Theta Kappa Honor Society</p>
+                        <p class="details"><strong>Relevant Coursework:</strong> Human Anatomy & Physiology I, Introduction to Business</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="clinical">Clinical & Medical</button>
+                    <button class="filter-btn" data-filter="leadership">Leadership</button>
+                    <button class="filter-btn" data-filter="community">Community Service</button>
+                    <button class="filter-btn" data-filter="writing">Writing</button>
+                </div>
+
+                <div class="experience-container">
+                    <!-- Clinical & Medical -->
+                    <div class="experience-list active" id="clinical">
+                        <div class="experience-item no-shadow">
+                            <div class="exp-header">
+                                <h4>Urgent Care Medical Assistant</h4>
+                                <span class="exp-date">Carbon Health | Jun 2025 – May 2026</span>
+                            </div>
+                            <p>Managed full patient journeys for 15–30 patients per shift, balancing administrative intake with clinical procedures like phlebotomy and vitals. Developed clinical foresight to minimize patient discomfort and ensure every patient felt seen.</p>
+                        </div>
+                        <div class="experience-item no-shadow">
+                            <div class="exp-header">
+                                <h4>Clinical Technician II (Phlebotomist)</h4>
+                                <span class="exp-date">Duke University Hospital | Feb 2024 – Jul 2024</span>
+                            </div>
+                            <p>Performed time-sensitive phlebotomy for medically complex patients on cardiac/transplant units during overnight shifts. Balanced clinical precision with empathy while navigating patient delirium and distress.</p>
+                        </div>
+                        <div class="experience-item no-shadow">
+                            <div class="exp-header">
+                                <h4>Physician Shadowing</h4>
+                                <span class="exp-date">Various Locations | Apr 2022 – Oct 2025</span>
+                            </div>
+                            <p>Observed physicians across eight specialties, witnessing the delivery of difficult news and the importance of patient autonomy. Reflected on the necessity of seeing patients as people first, not just cases.</p>
+                        </div>
+                    </div>
+
+                    <!-- Leadership -->
+                    <div class="experience-list" id="leadership" style="display: none;">
+                        <div class="experience-item no-shadow">
+                            <div class="exp-header">
+                                <h4>Pre-Health Society Founding President</h4>
+                                <span class="exp-date">Duke Ivy League+ Pre-Health Society | Oct 2023 – Feb 2025</span>
+                            </div>
+                            <p>Founded a student network to provide free, early access to pre-health resources, addressing gaps in guidance. Coordinated mentorship programs and organized the first student-led national research conference at Duke.</p>
+                        </div>
+                        <div class="experience-item no-shadow">
+                            <div class="exp-header">
+                                <h4>Logistics Coordinator</h4>
+                                <span class="exp-date">Surgical Ethics Working Group, HMS | Jun 2025 - Present</span>
+                            </div>
+                            <p>Manage meeting schedules and logistical operations for the working group, ensuring seamless communication. Maintain membership records to support effective collaboration among bioethics professionals.</p>
+                        </div>
+                        <div class="experience-item no-shadow">
+                            <div class="exp-header">
+                                <h4>Duke Presidential Ambassador</h4>
+                                <span class="exp-date">Duke University | Mar 2023 – Apr 2025</span>
+                            </div>
+                            <p>Represented Duke at high-profile events and tours, fostering engagement with alumni and distinguished guests. Helped create an equitable entry process for new members, earning the 2nd Most Hours Award.</p>
+                        </div>
+                        <div class="experience-item no-shadow">
+                            <div class="exp-header">
+                                <h4>TEDxDuke Vice-President & Committee Chair</h4>
+                                <span class="exp-date">Duke University | Sep 2022 – Feb 2025</span>
+                            </div>
+                            <p>Managed logistics, funding, and speaker selection for annual conferences with 300+ attendees. Mentored speakers to craft impactful talks that reached wide audiences via the TEDx platform.</p>
+                        </div>
+                    </div>
+
+                    <!-- Community Service -->
+                    <div class="experience-list" id="community" style="display: none;">
+                        <div class="experience-item no-shadow">
+                            <div class="exp-header">
+                                <h4>Surgical Waiting Room Volunteer</h4>
+                                <span class="exp-date">Duke University Health System | Jan 2024 - Feb 2025</span>
+                            </div>
+                            <p>Provided compassionate support to families of surgical patients, collaborating with staff to enhance the patient experience. Gained insights into the importance of empathetic communication in high-stress medical environments.</p>
+                        </div>
+                        <div class="experience-item no-shadow">
+                            <div class="exp-header">
+                                <h4>Volunteer & Mentor</h4>
+                                <span class="exp-date">FEMMES+ | Aug 2022 - May 2025</span>
+                            </div>
+                            <p>Delivered hands-on STEM education to under-resourced students and mentored high schoolers on independent research projects. Addressed educational gaps by creating a supportive and accessible learning environment.</p>
+                        </div>
+                        <div class="experience-item no-shadow">
+                            <div class="exp-header">
+                                <h4>Retirement Community Volunteer</h4>
+                                <span class="exp-date">Croasdaile Village | Aug 2022 - May 2024</span>
+                            </div>
+                            <p>Provided companionship and support in assisted living and memory care, using creative activities to build trust. Collaborated with healthcare professionals to ensure residents received compassionate, person-centered care.</p>
+                        </div>
+                        <div class="experience-item no-shadow">
+                            <div class="exp-header">
+                                <h4>Volunteer, Inpatient Pharmacy & Surgical ICU</h4>
+                                <span class="exp-date">Orlando Health & AdventHealth | Jun 2022 - Jul 2022</span>
+                            </div>
+                            <p>Assisted with pharmacy kit assembly and medical supply restocking, ensuring operational efficiency. Gained hands-on experience in medication management and patient care support within hospital settings.</p>
+                        </div>
+                    </div>
+
+                    <!-- Writing -->
+                    <div class="experience-list" id="writing" style="display: none;">
+                        <div class="experience-item no-shadow">
+                            <div class="exp-header">
+                                <h4>Medical Ethics Journal Blog Writer</h4>
+                                <span class="exp-date">Duke Medical Ethics Journal | Sep 2024 – Apr 2025</span>
+                            </div>
+                            <p>Authored articles on complex ethical topics like tube feeding in dementia and the ethics of "clean eating." Translated research into meaningful discussions to explore diverse perspectives in medicine.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="section bg-light">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title text-center">Research</h2>
+                    <div class="filter-controls">
+                        <button class="filter-btn active" data-filter="current-projects">Current Projects</button>
+                        <button class="filter-btn" data-filter="past-projects">Past Projects</button>
+                        <button class="filter-btn" data-filter="publications">Publications</button>
+                        <button class="filter-btn" data-filter="posters">Posters/Presentations</button>
+                    </div>
+                </div>
+                
+                <div class="external-links">
+                    <a href="https://orcid.org/0009-0000-5380-1862" target="_blank" class="link-item"><i class="fab fa-orcid"></i> ORCID</a>
+                    <a href="https://scholar.google.com/citations?user=IZXb0BYAAAAJ&hl=en" target="_blank" class="link-item"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+                </div>
+
+                <div class="research-grid">
+                    <!-- Current Projects -->
+                    <div class="research-item" data-category="current-projects">
+                        <h3>AI Ethics and Health Informatics Researcher</h3>
+                        <p class="role">UC Irvine Health | Jun 2024 – Present</p>
+                        <p>Led a comparative effectiveness study of LLMs for patient education in spine surgery and investigated clinician attitudes toward AI adoption. Manuscript under review at Bulletin of the Hospital for Joint Diseases.</p>
+                    </div>
+                    <div class="research-item" data-category="current-projects">
+                        <h3>Patient Education and Advocacy Ethics Researcher</h3>
+                        <p class="role">Harvard Medical School | Sep 2025 - Present</p>
+                        <p>Designing an interactive Patient Decision Aid (PDA) to empower patients in making informed choices about AI involvement in their treatment. Adhering to IPADAS guidelines to ensure accessibility for diverse populations.</p>
+                    </div>
+                    <div class="research-item" data-category="current-projects">
+                        <h3>Neurosurgical Ethics Researcher</h3>
+                        <p class="role">NEW Lab, MGH | Oct 2024 – Present</p>
+                        <p>Examining how medical education prepares trainees to address healthcare inequities and leading a systematic review on the ethical implications of intraoperative AI.</p>
+                    </div>
+
+                    <!-- Past Projects -->
+                    <div class="research-item" data-category="past-projects" style="display:none;">
+                        <h3>Neuro-Oncology Research Assistant</h3>
+                        <p class="role">Waitkus Lab, Duke Health | Sep 2022 – May 2025</p>
+                        <p>Investigated SMARCAL1's role in DNA replication stress in glioma cells, leading to a Graduation with Distinction thesis. Contributed to hypothesis generation and experimental design for potential therapeutic targets.</p>
+                    </div>
+                    <div class="research-item" data-category="past-projects" style="display:none;">
+                        <h3>Neurosurgery Clinical Researcher</h3>
+                        <p class="role">Duke University Hospital | Dec 2023 – Apr 2025</p>
+                        <p>Led a systematic review and case series on spontaneous and traumatic intra-orbital arteriovenous fistulas, collaborating with Dr. Erik Hauck to inform treatment protocols.</p>
+                    </div>
+
+                    <!-- Publications -->
+                    <div class="research-item" data-category="publications" style="display:none;">
+                        <h3>Clinician Attitudes Towards LLMs in Healthcare: Preferences for Adoption and Oversight</h3>
+                        <p class="role">Preprint | Nov 24, 2025</p>
+                        <p>Contributors: Arya Rao, Chinemerem Nwokemodo-Ihejirika, John WR Kincaid, <strong>Marharyta Krylova</strong>, Dan Nguyen, Christian Rivera, Erica Koranteng, Marc D. Succi.</p>
+                        <a href="https://doi.org/10.2196/preprints.87818" target="_blank" class="text-link">DOI: 10.2196/preprints.87818</a>
+                    </div>
+                    <div class="research-item" data-category="publications" style="display:none;">
+                        <h3>Spontaneous and Traumatic Intra-orbital Arteriovenous Fistulas</h3>
+                        <p class="role">Journal of Neurosurgery: Case Lessons</p>
+                        <p>First-author publication synthesizing data on a rare condition to inform treatment protocols where standards were previously undefined.</p>
+                        <a href="https://doi.org/10.3171/CASE24857" target="_blank" class="text-link">DOI: 10.3171/CASE24857</a>
+                    </div>
+                    <div class="research-item" data-category="publications" style="display:none;">
+                        <h3>SMARCAL1 and DNA Replication Stress in ALT+ Glioma Cells</h3>
+                        <p class="role">Neuro-Oncology</p>
+                        <p>Co-authored publication resulting from extensive investigation into DNA replication stress mechanisms in glioblastoma.</p>
+                        <a href="https://doi.org/10.1093/neuonc/noaf300" target="_blank" class="text-link">DOI: 10.1093/neuonc/noaf300</a>
+                    </div>
+
+                    <!-- Posters/Presentations (Conference Name First) -->
+                    <div class="research-item" data-category="posters" style="display:none;">
+                        <h3>ABRCMS 2025</h3>
+                        <p class="role">Effectiveness of AI Chatbots in Providing Patient Information for Endoscopic Lumbar Discectomy</p>
+                    </div>
+                    <div class="research-item" data-category="posters" style="display:none;">
+                        <h3>Duke Graduation with Distinction Symposium 2025</h3>
+                        <p class="role">Investigating the Role of SMARCAL1 in DNA Replication Stress</p>
+                    </div>
+                    <div class="research-item" data-category="posters" style="display:none;">
+                        <h3>ABRCMS 2024</h3>
+                        <p class="role">Investigating the Role of SMARCAL1 in DNA Replication Stress</p>
+                    </div>
+                    <div class="research-item" data-category="posters" style="display:none;">
+                        <h3>National Research Conference at Penn 2024</h3>
+                        <p class="role">SMARCAL1 in DNA Replication Stress and Sensitivity to DNA-Damaging Drugs</p>
+                    </div>
+                    <div class="research-item" data-category="posters" style="display:none;">
+                        <h3>Duke Summer Neuroscience Fellowship Symposium 2024</h3>
+                        <p class="role">SMARCAL1 in DNA Replication Stress and Sensitivity to DNA-Damaging Drugs</p>
+                    </div>
+                    <div class="research-item" data-category="posters" style="display:none;">
+                        <h3>Duke Annual Undergraduate Research Symposium 2024</h3>
+                        <p class="role">Targeting DNA Replication Stress in Glioblastoma Cells that Utilize ALT Mechanism</p>
+                    </div>
+                    <div class="research-item" data-category="posters" style="display:none;">
+                        <h3>Harvard National Collegiate Research Conference 2024</h3>
+                        <p class="role">Targeting DNA Replication Stress in Glioblastoma Cells that Utilize ALT Mechanism</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="awards" class="section">
+            <div class="container">
+                <h2 class="section-title">Awards & Grants</h2>
+                <div class="awards-grid">
+                    <div class="award-card">
+                        <div class="award-header">
+                            <h3>Dean's Scholarship for HMS Master's Students</h3>
+                            <span class="award-date">Jun 2025</span>
+                        </div>
+                        <p class="award-role">Grant Recipient</p>
+                        <p>Selected as one of 35 students across all the HMS Master’s programs. Awarded to students that "exhibited academic excellence, persistence, resilience, and a commitment to serving under-resourced communities in their field of interest."</p>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <h3>Duke URS DiSTEM Award</h3>
+                            <span class="award-date">Nov 2024</span>
+                        </div>
+                        <p class="award-role">Grant Recipient</p>
+                        <p>One of 16 students out of a large pool of applicants selected as a grant recipient. The grant covered all expenses associated with attending the ABRCMS conference.</p>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-header">
+                            <h3>Duke URS Conference Grant</h3>
+                            <span class="award-date">Sept 2023, Jan 2024</span>
+                        </div>
+                        <p class="award-role">Grant Recipient</p>
+                        <p>Received a $500 award on two separate occasions to support expenses for presenting neurosurgery research at conferences.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Skills & Languages</h2>
+                <div class="skills-grid">
+                    <div class="skills-card">
+                        <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                        <div class="skill-tags">
+                            <span>Python</span>
+                            <span>R</span>
+                            <span>Cell Profiler</span>
+                            <span>Prism</span>
+                            <span>RedCap</span>
+                            <span>EHR Systems</span>
+                            <span>Zotero</span>
+                            <span>Paperpile</span>
+                            <span>BioRender</span>
+                            <span>LLM APIs</span>
+                        </div>
+                    </div>
+                    <div class="skills-card">
+                        <h3><i class="fas fa-language"></i> Languages</h3>
+                        <div class="skill-tags">
+                            <span>English</span>
+                            <span>Russian</span>
+                            <span>Ukrainian</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="media" class="section">
+            <div class="container">
+                <h2 class="section-title">Media Mentions</h2>
+                <div class="media-grid">
+                    <div class="media-item">
+                        <h3>Student Spotlight: Margarita Krylova</h3>
+                        <p class="source">Duke University Department of Psychology and Neuroscience | Jul 2024</p>
+                        <p>Recognized for work in the Neuroscience department and dedication to exploring ethical issues in neurosurgery.</p>
+                        <a href="https://psychandneuro.duke.edu/news/student-spotlight-margarita-krylova" target="_blank" class="text-link">Read Article &rarr;</a>
+                    </div>
+                    <div class="media-item">
+                        <h3>URS Conference Stories: Margarita Krylova</h3>
+                        <p class="source">Duke University Undergraduate Research Support | Jan 2025</p>
+                        <p>Featured spotlight sharing experiences presenting research at the conference and discussing the passion for a career in neurosurgery.</p>
+                        <a href="https://undergraduateresearch.duke.edu/news/urs-conference-stories-margarita-krylova" target="_blank" class="text-link">Read Article &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section bg-dark">
+            <div class="container">
+                <h2 class="section-title text-white">Contact</h2>
+                <div class="contact-content text-white">
+                    <p>I am always open to discussing new opportunities, research collaborations, or ethical dilemmas in modern medicine.</p>
+                    <div class="contact-links">
+                        <a href="mailto:marharyta.krylova@gmail.com" class="btn btn-primary">Email Me</a>
+                        <a href="https://www.linkedin.com/in/marharytakrylova1/" target="_blank" class="btn btn-outline-light">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Marharyta Krylova. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
