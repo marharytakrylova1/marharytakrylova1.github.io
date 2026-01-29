@@ -634,6 +634,37 @@ ul {
     letter-spacing: 0.5px;
 }
 
+/* Specific styling for Publications and Posters titles */
+#research-others-view .research-item {
+    background: white !important;
+    border: 1px solid #eee !important;
+    border-radius: 12px;
+    padding: 2rem !important;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+#research-others-view .research-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+}
+
+/* Color cycling for borders on hover */
+#research-others-view .research-item:nth-child(3n+1):hover { border-color: #e91e63 !important; }
+#research-others-view .research-item:nth-child(3n+2):hover { border-color: #ff9800 !important; }
+#research-others-view .research-item:nth-child(3n+3):hover { border-color: #3498db !important; }
+
+/* Ensure tags also light up inside these boxes */
+#research-others-view .research-item:nth-child(3n+1):hover .exp-tag { color: #e91e63; }
+#research-others-view .research-item:nth-child(3n+2):hover .exp-tag { color: #ff9800; }
+#research-others-view .research-item:nth-child(3n+3):hover .exp-tag { color: #3498db; }
+
+#research-others-view .research-item h3 {
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
 .text-link {
     color: var(--accent-color);
     font-weight: 600;
