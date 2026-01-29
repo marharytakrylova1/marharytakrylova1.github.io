@@ -777,6 +777,13 @@ ul {
 }
 
 /* The Tag Style (Caps, Gray Box) */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
 .exp-tag {
     display: inline-block;
     background-color: #f5f5f5; /* Lighter gray */
@@ -787,8 +794,13 @@ ul {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0; /* Let container handle gap */
     transition: color 0.3s ease; /* For lighting up text */
+}
+
+/* Specific adjustment for single tags not in container if any left */
+.research-item > .exp-tag {
+    margin-bottom: 0.8rem;
 }
 
 .exp-header h4 {
