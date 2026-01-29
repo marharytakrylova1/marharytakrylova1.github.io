@@ -693,23 +693,21 @@ ul {
 /* --- Global Timeline & Experience Layout --- */
 .experience-layout {
     display: grid;
-    grid-template-columns: 80px 1fr; /* Fixed timeline width, fluid content */
+    grid-template-columns: 80px 1fr;
     gap: 2rem;
     position: relative;
-    min-height: 500px;
 }
 
 /* Sticky Timeline Container */
 .global-timeline-container {
     position: sticky;
-    top: 150px; /* Offset from sticky header */
-    height: 600px; /* Fixed visual height for the 5-year span */
+    top: 150px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* The Vertical Line */
 .timeline-bar {
     position: absolute;
     top: 0;
@@ -721,96 +719,87 @@ ul {
     z-index: 0;
 }
 
-/* Highlighting Segment (Controlled by JS) */
 .timeline-highlight {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 4px; /* Slightly thicker than base line */
-    background-color: transparent; /* Default transparent */
+    width: 3px; /* Reduced from 4px */
+    background-color: transparent;
     z-index: 1;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Smoother, less bouncy */
     border-radius: 2px;
 }
 
-/* Timeline Nodes (Years) */
 .timeline-node {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
-    background-color: #ccc; /* Light gray filled default */
+    width: 8px; /* Slightly smaller */
+    height: 8px;
+    background-color: #ddd;
     border-radius: 50%;
     z-index: 2;
     transition: all 0.3s ease;
 }
 
-.timeline-node.active {
-    transform: translateX(-50%) scale(1.3);
-    /* Color handled by JS via inline style or class modifiers */
+.timeline-node.active-node {
+    transform: translateX(-50%) scale(1.15); /* Reduced from 1.3 */
 }
 
-/* Year Labels (Pseudo-elements) */
 .timeline-node::before {
     content: attr(data-year);
     position: absolute;
-    left: -50px; /* Position to the left */
+    left: -50px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 0.8rem;
-    color: var(--light-text);
+    font-size: 0.75rem; /* Slightly smaller */
+    color: #999;
     font-weight: 600;
     width: 40px;
     text-align: right;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 /* Experience List/Items */
 .experience-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .experience-item {
     background: transparent;
-    padding: 2rem;
-    border-radius: 12px; /* Restored card look slightly but keep transparent bg if desired, or white? prompt says "timeline highlighted" not card focus. Let's keep it clean. */
-    background: white; /* Let's give cards back their background for readability against the timeline flow */
-    border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: var(--shadow-sm);
+    padding: 1rem 0;
+    border: none;
+    box-shadow: none;
     transition: all 0.3s ease;
-    cursor: default;
 }
 
 .experience-item:hover {
-    transform: translateX(5px);
-    box-shadow: var(--shadow-md);
-    border-color: rgba(0,0,0,0.1);
+    transform: none; /* Removed move effect */
 }
 
-.exp-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+/* The Tag Style (Caps, Gray Box) */
+.exp-tag {
+    display: inline-block;
+    background-color: #f5f5f5; /* Lighter gray */
+    color: var(--light-text);
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.8rem;
+    transition: color 0.3s ease; /* For lighting up text */
 }
 
 .exp-header h4 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--primary-color);
+    margin-bottom: 0.5rem;
 }
-
-.exp-date {
-    font-size: 0.9rem;
-    color: var(--light-text);
-    font-weight: 500;
-}
-
 
 /* Media Grid */
 .media-grid {
@@ -943,12 +932,11 @@ ul {
         font-size: 1.2rem;
     }
 
-    /* Experience Timeline Mobile Fallback */
     .experience-layout {
-        grid-template-columns: 1fr; /* Stack */
+        grid-template-columns: 1fr;
     }
     
     .global-timeline-container {
-        display: none; /* Hide fancy visualizer on small screens or adjust */
+        display: none;
     }
 }
