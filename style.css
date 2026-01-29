@@ -224,14 +224,14 @@ ul {
 .nested .inner-dot {
     width: 10px;
     height: 10px;
-    background-color: #e91e63;
+    background-color: #ff9800; /* Changed to orange */
     border-radius: 50%;
 }
 
 .nested .middle-ring {
     width: 60%;
     height: 60%;
-    border: 2px solid #e91e63;
+    border: 2px solid #3498db; /* Changed to blue */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -253,7 +253,7 @@ ul {
     width: 110px;
     height: 110px;
     border-color: #e91e63;
-    border-width: 6px;
+    border-width: 2px;
     top: 15%;
     right: 15%;
 }
