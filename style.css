@@ -177,21 +177,168 @@ ul {
 
 /* Hero Section */
 .hero {
-    padding: 6rem 0;
-    background: var(--bg-gradient);
+    padding: 8rem 0;
+    background-color: #fcfcfc;
     position: relative;
     overflow: hidden;
+}
+
+.hero-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    border-style: solid;
+    opacity: 0.7;
+}
+
+.dot {
+    border: none !important;
+    opacity: 0.8;
+}
+
+/* Flex centering for nested shapes */
+.nested {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nested .inner {
+    width: 50%;
+    height: 50%;
+    border: 2px solid inherit;
+    border-radius: 50%;
+    border-color: inherit;
+    opacity: 0.6;
+}
+
+.nested .inner-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #e91e63;
+    border-radius: 50%;
+}
+
+.nested .middle-ring {
+    width: 60%;
+    height: 60%;
+    border: 2px solid #e91e63;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+}
+
+.nested .inner-ring {
+    width: 60%;
+    height: 60%;
+    border: 3px solid #ff9800;
+    border-radius: 50%;
+}
+
+/* --- Positioning Flow: Bottom-Left to Top-Right --- */
+
+/* Shape 1 (Pink Nested) - Top Right Area */
+.shape-1 {
+    width: 110px;
+    height: 110px;
+    border-color: #e91e63;
+    border-width: 6px;
+    top: 15%;
+    right: 15%;
+}
+
+/* Shape 2 (Orange Nested) - Mid Right, slightly lower */
+.shape-2 {
+    width: 80px;
+    height: 80px;
+    border-color: #ff9800;
+    border-width: 4px;
+    top: 35%;
+    right: 5%;
+}
+
+/* Shape 3 (Blue Accent) - Top Edge */
+.shape-3 {
+    width: 40px;
+    height: 40px;
+    border-color: #3498db;
+    border-width: 3px;
+    top: 5%;
+    right: 25%;
+}
+
+/* Shape 4 (Large Pale Pink) - Far Top Right Corner */
+.shape-4 {
+    width: 200px;
+    height: 200px;
+    border-color: rgba(233, 30, 99, 0.08);
+    border-width: 25px;
+    top: -60px;
+    right: -40px;
+}
+
+/* Shape 5 (Small Orange) - Mid-Right trajectory */
+.shape-5 {
+    width: 30px;
+    height: 30px;
+    border-color: #ff9800;
+    border-width: 2px;
+    bottom: 45%;
+    right: 18%;
+}
+
+/* Shape 6 (Blue Anchor) - Bottom Left, keep low */
+.shape-6 {
+    width: 90px;
+    height: 90px;
+    border-color: rgba(52, 152, 219, 0.25);
+    border-width: 5px;
+    bottom: 5%;
+    left: 2%; 
+}
+
+/* Dots */
+/* Pink dot near top title */
+.shape-8.dot { width: 8px; height: 8px; background-color: #e91e63; top: 12%; right: 35%; }
+/* Blue dot near nested orange */
+.shape-10.dot { width: 10px; height: 10px; background-color: #3498db; top: 38%; right: 2%; }
+
+/* Shape 9 (Nested Pink/Red) - Upper Right */
+.shape-9.nested {
+    width: 50px;
+    height: 50px;
+    border-color: #e91e63;
+    border-width: 2px;
+    top: 25%;
+    right: 28%;
+}
+.shape-9.nested .inner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e91e63;
 }
 
 .hero-container {
     display: flex;
     align-items: center;
     gap: 4rem;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content {
     flex: 1;
-    z-index: 1;
 }
 
 .hero-title {
@@ -199,31 +346,40 @@ ul {
     font-weight: 800;
     margin-bottom: 0.5rem;
     color: var(--primary-color);
-    line-height: 1.2;
-    letter-spacing: -1px;
+    line-height: 1.1;
+    letter-spacing: -1.2px;
 }
 
 .legal-name {
     font-size: 1rem;
     color: var(--light-text);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-style: italic;
+    opacity: 0.8;
 }
 
+/* Updated Subtitle with Orange Line */
 .hero-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--secondary-color);
-    margin-bottom: 1.5rem;
-    font-weight: 600;
+    margin-bottom: 1.8rem;
+    font-weight: 500;
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+    border-left: 4px solid #ff9800; /* Vertical Orange Line */
+    padding-left: 1rem;
+    display: inline-block; /* Keeps border tight to text height */
 }
 
 .hero-text {
     font-size: 1.05rem;
     color: var(--light-text);
-    margin-bottom: 2rem;
-    max-width: 600px;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    line-height: 1.7;
 }
 
+/* Updated Image Styling */
 .hero-image {
     flex: 1;
     display: flex;
@@ -236,24 +392,26 @@ ul {
     z-index: 2;
 }
 
+/* Frame around image */
 .img-wrapper::before {
     content: '';
     position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(52, 152, 219, 0.2);
-    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 108%;
+    height: 108%;
+    border: 2px solid rgba(44, 62, 80, 0.1); /* Subtle dark frame */
+    border-radius: 28px;
     z-index: -1;
 }
 
 .hero-image img {
-    width: 320px;
-    height: 320px;
+    width: 340px;
+    height: 340px;
     object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     background-color: white;
 }
 
@@ -270,6 +428,7 @@ ul {
     color: var(--primary-color);
     position: relative;
     display: inline-block;
+    width: 100%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -278,7 +437,7 @@ ul {
     content: '';
     display: block;
     width: 60px;
-    height: 4px;
+    height: 2px;
     background-color: var(--accent-color);
     margin: 10px auto 0;
     border-radius: 2px;
