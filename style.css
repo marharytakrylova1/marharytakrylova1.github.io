@@ -547,6 +547,7 @@ ul {
 .section-header {
     text-align: center;
     margin-bottom: 3rem;
+    width: 100%; /* Ensure full width */
 }
 
 .filter-controls {
