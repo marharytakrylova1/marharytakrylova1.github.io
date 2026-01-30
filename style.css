@@ -183,6 +183,12 @@ ul {
     overflow: hidden;
 }
 
+#about .section-content {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .hero-shapes {
     position: absolute;
     top: 0;
@@ -434,7 +440,7 @@ ul {
 
 /* Sections */
 .section {
-    padding: 5rem 0;
+    padding: 3rem 0;
 }
 
 .section-title {
