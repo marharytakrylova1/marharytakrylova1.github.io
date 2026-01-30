@@ -1028,12 +1028,12 @@ ul {
     }
 
     .hero-title {
-        font-size: 2rem; /* Smaller mobile title */
+        font-size: 1.8rem; /* Smaller mobile title */
         letter-spacing: -0.5px;
     }
 
     .hero-subtitle {
-        font-size: 0.95rem; /* Smaller subtitle */
+        font-size: 0.9rem; /* Smaller subtitle */
         line-height: 1.5;
         border-left: none; /* Remove border on mobile center align */
         padding-left: 0;
@@ -1041,7 +1041,7 @@ ul {
     }
 
     .hero-text {
-        font-size: 0.9rem; /* Smaller body text */
+        font-size: 0.85rem; /* Smaller body text */
         margin-bottom: 2rem;
     }
 
@@ -1072,7 +1072,7 @@ ul {
     }
 
     .section-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         margin-bottom: 2rem;
     }
 
@@ -1096,6 +1096,11 @@ ul {
 
     .experience-item {
         padding: 1.5rem; /* Standard card padding */
+        border-bottom: 1px solid #eee; /* Subtle separation line */
+    }
+
+    .experience-item:last-child {
+        border-bottom: none; /* No line for the last item */
     }
 
     .experience-item::before, 
@@ -1126,19 +1131,19 @@ ul {
 
     /* Typography Reductions */
     h3 {
-        font-size: 1.1rem !important; /* Smaller headings */
+        font-size: 1rem !important; /* Smaller headings */
     }
 
     .exp-tag {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         padding: 0.3rem 0.8rem;
     }
 
     p, .details, .award-role, .exp-date {
-        font-size: 0.85rem !important; /* Smaller text preference */
+        font-size: 0.8rem !important; /* Smaller text preference */
     }
 
     .contact-content p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 }
