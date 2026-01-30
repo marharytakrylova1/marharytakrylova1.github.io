@@ -975,33 +975,25 @@ ul {
 }
 
 /* Responsive */
+@media (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
+    /* Header & Nav */
     .header-container {
         padding: 0 1rem;
     }
 
     .nav {
-        display: none;
+        display: none; /* Hidden by default, toggled by JS */
     }
     
     .mobile-menu-btn {
         display: block;
         z-index: 1001;
-    }
-
-    .hero-container {
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 3rem;
-    }
-
-    .hero-image img {
-        width: 250px;
-        height: 250px;
-    }
-
-    .hero-title {
-        font-size: 2.2rem;
     }
 
     .nav.active {
@@ -1021,14 +1013,132 @@ ul {
     }
 
     .nav.active a {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
+    /* Hero Section */
+    .hero {
+        padding: 4rem 0; /* Reduced padding */
+    }
+
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-title {
+        font-size: 2rem; /* Smaller mobile title */
+        letter-spacing: -0.5px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem; /* Smaller subtitle */
+        line-height: 1.5;
+        border-left: none; /* Remove border on mobile center align */
+        padding-left: 0;
+        display: block;
+    }
+
+    .hero-text {
+        font-size: 0.9rem; /* Smaller body text */
+        margin-bottom: 2rem;
+    }
+
+    .hero-image img {
+        width: 280px;
+        height: 280px; /* Bigger image on mobile */
+    }
+
+    /* Reposition shapes for mobile centering around image */
+    .shape-1 { top: 5%; right: 5%; width: 80px; height: 80px; }
+    .shape-2 { top: 7%; left: 4%; width: 60px; height: 60px; }
+    .shape-3 { top: 25%; right: 2%; width: 40px; height: 40px; }
+    .shape-4 { top: -40px; right: -20px; width: 120px; height: 120px; }
+    .shape-5 { top: 20%; left: 10%; width: 25px; height: 25px; }
+    .shape-6 { top: 35%; left: 2%; width: 50px; height: 50px; }
+    .shape-7.dot { top: 15%; right: 20%; }
+    .shape-8.dot { top: 30%; left: 25%; }
+    .shape-9.nested { top: 8%; right: 25%; width: 40px; height: 40px; }
+    .shape-10.dot { top: 5%; left: 20%; }
+
+    .hero-actions {
+        justify-content: center; /* Center buttons */
+    }
+
+    /* Sections General */
+    .section {
+        padding: 3rem 0;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Experience & Research Timeline Layout */
     .experience-layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack timeline and content */
+        gap: 0;
     }
     
     .global-timeline-container {
-        display: none;
+        display: none; /* Hide visual timeline on mobile for cleanliness */
+    }
+
+    .experience-list {
+        padding-left: 0; /* Remove timeline padding */
+    }
+
+    .experience-list::before {
+        display: none; /* Hide vertical line */
+    }
+
+    .experience-item {
+        padding: 1.5rem; /* Standard card padding */
+    }
+
+    .experience-item::before, 
+    .experience-item::after {
+        display: none; /* Hide timeline dots/lines */
+    }
+
+    .timeline-year {
+        position: relative; /* Reset from absolute */
+        left: auto;
+        width: auto;
+        text-align: left;
+        margin: 1rem 0 0.5rem 0;
+        padding-left: 0;
+        color: var(--secondary-color);
+        opacity: 0.8;
+    }
+
+    /* Cards & Grids */
+    .education-grid, .awards-grid, .media-grid, .research-grid {
+        grid-template-columns: 1fr; /* Single column */
+        gap: 1.5rem;
+    }
+
+    .education-card, .award-card, .media-item, .skills-card {
+        padding: 1.5rem; /* Reduced padding */
+    }
+
+    /* Typography Reductions */
+    h3 {
+        font-size: 1.1rem !important; /* Smaller headings */
+    }
+
+    .exp-tag {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.8rem;
+    }
+
+    p, .details, .award-role, .exp-date {
+        font-size: 0.85rem !important; /* Smaller text preference */
+    }
+
+    .contact-content p {
+        font-size: 0.9rem;
     }
 }
