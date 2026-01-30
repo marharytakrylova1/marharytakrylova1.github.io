@@ -57,9 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Global Timeline Logic (Apply to both sections) ---
     // Experience timeline: 2022-2027
-    // Research timeline: 2023-2027
+    // Research timeline: 2022-2027 (Updated to cover 2022 start dates)
     const EXP_START_YEAR = 2022;
-    const RES_START_YEAR = 2023;
+    const RES_START_YEAR = 2022;
     const END_YEAR = 2027; 
     
     const COLORS = ['#e91e63', '#ff9800', '#3498db'];
