@@ -1088,6 +1088,7 @@ ul {
 
     .experience-list {
         padding-left: 0; /* Remove timeline padding */
+        gap: 0.5rem; /* Reduced gap between items */
     }
 
     .experience-list::before {
@@ -1095,8 +1096,14 @@ ul {
     }
 
     .experience-item {
-        padding: 1.5rem; /* Standard card padding */
+        padding: 1rem 1.5rem; /* Added side padding, kept vertical compact */
         border-bottom: 1px solid #eee; /* Subtle separation line */
+    }
+
+    /* Research grid and others view items */
+    #research-others-view .research-item {
+        padding: 1.2rem 1.5rem !important; /* Added side padding */
+        margin-bottom: 0.8rem;
     }
 
     .experience-item:last-child {
@@ -1113,8 +1120,8 @@ ul {
         left: auto;
         width: auto;
         text-align: left;
-        margin: 1rem 0 0.5rem 0;
-        padding-left: 0;
+        margin: 0.5rem 0 0.2rem 0;
+        padding-left: 1.5rem; /* Aligned with item side padding */
         color: var(--secondary-color);
         opacity: 0.8;
     }
@@ -1122,11 +1129,11 @@ ul {
     /* Cards & Grids */
     .education-grid, .awards-grid, .media-grid, .research-grid {
         grid-template-columns: 1fr; /* Single column */
-        gap: 1.5rem;
+        gap: 1rem; /* Reduced gap */
     }
 
     .education-card, .award-card, .media-item, .skills-card {
-        padding: 1.5rem; /* Reduced padding */
+        padding: 1.2rem; /* Reduced padding */
     }
 
     /* Typography Reductions */
