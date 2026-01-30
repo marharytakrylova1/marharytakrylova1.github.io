@@ -55,9 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Global Timeline Logic (Apply to both sections) ---
-    // Experience timeline: 2022-2027
-    // Research timeline: 2022-2027 (Updated to cover 2022 start dates)
+    // --- Global Timeline Logic (Desktop Only mostly) ---
     const EXP_START_YEAR = 2022;
     const RES_START_YEAR = 2022;
     const END_YEAR = 2027; 
@@ -72,10 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const [year, month] = dateStr.split('-').map(Number);
             date = new Date(year, month - 1);
         }
-        // Clamp min date
         if (date.getFullYear() < startYear) {
-             // If experience started before timeline, just show from start of timeline
-             // return negative months which will be clamped to 0 later
+             // clamp logic if needed
         }
         let months = (date.getFullYear() - startYear) * 12 + date.getMonth();
         return months;
@@ -84,25 +80,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const allExpItems = document.querySelectorAll('.experience-item');
 
     allExpItems.forEach((item, index) => {
+        // Desktop Hover
         item.addEventListener('mouseenter', () => {
+            if (window.innerWidth <= 768) return; // Skip on mobile
+
             const startStr = item.getAttribute('data-start');
             const endStr = item.getAttribute('data-end');
             const tag = item.querySelector('.exp-tag');
             
             if (!startStr || !endStr) return;
 
-            // Find the LOCAL timeline container for this section
             const container = item.closest('.experience-layout');
             const highlight = container.querySelector('.timeline-highlight');
             const nodes = container.querySelectorAll('.timeline-node');
 
-            // Determine context (Research or Experience)
-            const isResearch = container.classList.contains('research-timeline') || container.querySelector('.research-timeline') || item.closest('#research');
-            // Actually check if the container ITSELF has the marker or is inside #research
-            // In HTML: <div class="global-timeline-container research-timeline">
-            // But item.closest('.experience-layout') finds the wrapper. 
-            // The wrapper contains the timeline container.
-            
             const timelineContainer = container.querySelector('.global-timeline-container');
             const isResearchTimeline = timelineContainer.classList.contains('research-timeline') || item.closest('#research-projects-view');
 
@@ -114,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (startMonths < 0) startMonths = 0;
             if (endMonths > totalMonths) endMonths = totalMonths;
-            // If completely out of range (e.g. ended before startYear), it stays 0 height.
             if (endMonths < 0) endMonths = 0;
 
             const startPosPercent = 100 - (startMonths / totalMonths) * 100;
@@ -136,7 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const yearMonths = (year - startYear) * 12;
                 const nodePosPercent = 100 - (yearMonths / totalMonths) * 100;
 
-                // Tolerance for hitting the node
                 if (nodePosPercent >= endPosPercent - 1 && nodePosPercent <= startPosPercent + 1) {
                     node.style.backgroundColor = color;
                     node.classList.add('active-node');
@@ -149,6 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         item.addEventListener('mouseleave', () => {
+            if (window.innerWidth <= 768) return;
+
             const container = item.closest('.experience-layout');
             const highlight = container.querySelector('.timeline-highlight');
             const nodes = container.querySelectorAll('.timeline-node');
@@ -165,6 +156,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Mobile Scroll Highlighting ---
+    if (window.innerWidth <= 768) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '-40% 0px -40% 0px', // Active only in the middle 20% of screen
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const item = entry.target;
+                const tag = item.querySelector('.exp-tag');
+                
+                // Determine index for color cycling
+                // Need global index or relative to list? 
+                // Let's use the same global calculation if possible or just index in parent
+                const parent = item.parentElement;
+                const index = Array.from(parent.children).indexOf(item);
+                const color = COLORS[index % 3];
+
+                if (entry.isIntersecting) {
+                    item.classList.add('mobile-active');
+                    item.style.borderColor = color;
+                    if (tag) tag.style.color = color;
+                } else {
+                    item.classList.remove('mobile-active');
+                    item.style.borderColor = '#eee'; // Reset to default gray
+                    if (tag) tag.style.color = ''; // Reset text
+                }
+            });
+        }, observerOptions);
+
+        const mobileItems = document.querySelectorAll('.experience-item, #research-others-view .research-item');
+        mobileItems.forEach(item => observer.observe(item));
+    }
+
+
     // CSS for JS interactions
     const style = document.createElement('style');
     style.innerHTML = `
@@ -176,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Mobile Menu Toggle ---
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('.nav');
+    
     if (mobileBtn) {
         mobileBtn.addEventListener('click', () => {
             nav.classList.toggle('active');

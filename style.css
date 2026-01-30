@@ -1112,7 +1112,20 @@ ul {
         background-color: #fafafa;
     }
 
-    /* Cycle colors on active tap */
+    /* Scroll Transition for Mobile */
+    .experience-item, 
+    #research-others-view .research-item {
+        transition: border-color 0.5s ease, background-color 0.3s ease;
+    }
+
+    /* Mobile Scroll Active State (applied by JS) */
+    .experience-item.mobile-active,
+    #research-others-view .research-item.mobile-active {
+        border-color: inherit; /* JS sets inline style, this ensures it takes precedence if needed, but inline style wins */
+        background-color: #fcfcfc; /* Subtle highlight bg */
+    }
+
+    /* Cycle colors on active tap (Keep for click interaction fallback) */
     .experience-item:nth-child(3n+1):active { border-color: #e91e63; }
     .experience-item:nth-child(3n+2):active { border-color: #ff9800; }
     .experience-item:nth-child(3n+3):active { border-color: #3498db; }
