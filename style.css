@@ -1106,6 +1106,25 @@ ul {
         margin-bottom: 0.8rem;
     }
 
+    /* Tap/Active State for Mobile Highlight */
+    .experience-item:active,
+    #research-others-view .research-item:active {
+        background-color: #fafafa;
+    }
+
+    /* Cycle colors on active tap */
+    .experience-item:nth-child(3n+1):active { border-color: #e91e63; }
+    .experience-item:nth-child(3n+2):active { border-color: #ff9800; }
+    .experience-item:nth-child(3n+3):active { border-color: #3498db; }
+
+    .experience-item:nth-child(3n+1):active .exp-tag { color: #e91e63; }
+    .experience-item:nth-child(3n+2):active .exp-tag { color: #ff9800; }
+    .experience-item:nth-child(3n+3):active .exp-tag { color: #3498db; }
+
+    #research-others-view .research-item:nth-child(3n+1):active { border-color: #e91e63 !important; }
+    #research-others-view .research-item:nth-child(3n+2):active { border-color: #ff9800 !important; }
+    #research-others-view .research-item:nth-child(3n+3):active { border-color: #3498db !important; }
+
     .experience-item:last-child {
         border-bottom: none; /* No line for the last item */
     }
