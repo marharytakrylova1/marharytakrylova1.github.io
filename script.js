@@ -189,5 +189,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 spans[1].style.opacity = '1';
             }
         });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    const spans = mobileBtn.querySelectorAll('span');
+                    spans.forEach(span => span.style.transform = 'none');
+                    spans[1].style.opacity = '1';
+                }
+            });
+        });
     }
 });
