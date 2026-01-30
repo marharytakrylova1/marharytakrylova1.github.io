@@ -1133,7 +1133,24 @@ ul {
     }
 
     .education-card, .award-card, .media-item, .skills-card {
-        padding: 1.2rem; /* Reduced padding */
+        padding: 1rem; /* Further reduced padding */
+    }
+
+    .skills-card h3 {
+        margin-bottom: 1rem; /* Tighter spacing */
+    }
+
+    .skill-tags span, .skill-languages-layout span {
+        font-size: 0.75rem !important;
+        padding: 0.3rem 0.8rem !important;
+    }
+
+    .skill-languages-layout {
+        gap: 0.5rem;
+    }
+
+    .lang-row {
+        gap: 0.5rem;
     }
 
     /* Typography Reductions */
