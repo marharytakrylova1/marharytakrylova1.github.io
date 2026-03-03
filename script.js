@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Experience Section Filtering ---
     const expFilterBtns = document.querySelectorAll('#experience .filter-btn');
-    const expLists = document.querySelectorAll('.experience-content .experience-list');
+    const expLists = document.querySelectorAll('#experience .experience-list');
 
     expFilterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -233,4 +233,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- Initialize default views to prevent rendering bugs ---
+    // Sometimes browsers (especially Safari) can fail to paint flex/grid elements correctly on initial load.
+    // Triggering a click on the active filters forces a style recalculation.
+    setTimeout(() => {
+        const activeResearchFilter = document.querySelector('#research .filter-btn.active');
+        if (activeResearchFilter) activeResearchFilter.click();
+
+        const activeExpFilter = document.querySelector('#experience .filter-btn.active');
+        if (activeExpFilter) activeExpFilter.click();
+    }, 50);
+
 });
