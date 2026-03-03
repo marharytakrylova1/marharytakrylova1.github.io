@@ -1015,6 +1015,29 @@ ul {
 
     .nav.active a {
         font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .nav.active .dropdown {
+        order: -1;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .nav.active .dropdown-menu {
+        position: relative;
+        width: 100%;
+        right: auto;
+        box-shadow: none;
+        border: none;
+        text-align: center;
+        padding: 0;
+    }
+
+    .nav.active .dropdown:hover .dropdown-menu {
+        display: block;
     }
 
     /* Hero Section */
