@@ -222,6 +222,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Mobile Dropdown Toggle ---
+    const navDropdownToggle = document.querySelector('.nav .dropdown-toggle');
+    const navDropdown = document.querySelector('.nav .dropdown');
+    
+    if (navDropdownToggle && navDropdown) {
+        navDropdownToggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                navDropdown.classList.toggle('mobile-open');
+            }
+        });
+    }
+
     // Close mobile menu when a link is clicked - moved outside to ensure binding
     document.querySelectorAll('.nav a').forEach(link => {
         link.addEventListener('click', () => {
