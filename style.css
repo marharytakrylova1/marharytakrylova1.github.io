@@ -180,7 +180,7 @@ ul {
     padding: 8rem 0;
     background-color: #fcfcfc;
     position: relative;
-    overflow: hidden;
+    z-index: 10;
 }
 
 #about .section-content {
@@ -197,6 +197,7 @@ ul {
     height: 100%;
     pointer-events: none;
     z-index: 0;
+    overflow: hidden;
 }
 
 .shape {
