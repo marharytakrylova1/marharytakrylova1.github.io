@@ -95,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const nodes = container.querySelectorAll('.timeline-node');
 
             const timelineContainer = container.querySelector('.global-timeline-container');
+            if (!timelineContainer) return; // Fix: Prevent crash if no timeline exists for this view
+
             const isResearchTimeline = timelineContainer.classList.contains('research-timeline') || item.closest('#research-projects-view');
 
             const startYear = isResearchTimeline ? RES_START_YEAR : EXP_START_YEAR;
