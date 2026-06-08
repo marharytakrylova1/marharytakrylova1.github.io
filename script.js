@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const RES_START_YEAR = 2022;
     const END_YEAR = 2027; 
     
-    const COLORS = ['#e91e63', '#ff9800', '#3498db'];
+    const COLORS = ['#A51C30', '#B5B5B5', '#00539B'];
 
     function getMonthsFromStart(dateStr, startYear) {
         let date;

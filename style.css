@@ -1,7 +1,7 @@
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #34495e;
-    --accent-color: #3498db;
+    --accent-color: #00539B;
     --text-color: #333;
     --light-text: #666;
     --bg-color: #ffffff;
@@ -231,14 +231,14 @@ ul {
 .nested .inner-dot {
     width: 10px;
     height: 10px;
-    background-color: #ff9800; /* Changed to orange */
+    background-color: #B5B5B5; /* Changed to orange */
     border-radius: 50%;
 }
 
 .nested .middle-ring {
     width: 60%;
     height: 60%;
-    border: 2px solid #3498db; /* Changed to blue */
+    border: 2px solid #00539B; /* Changed to blue */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -249,7 +249,7 @@ ul {
 .nested .inner-ring {
     width: 60%;
     height: 60%;
-    border: 3px solid #ff9800;
+    border: 3px solid #B5B5B5;
     border-radius: 50%;
 }
 
@@ -259,7 +259,7 @@ ul {
 .shape-1 {
     width: 110px;
     height: 110px;
-    border-color: #e91e63;
+    border-color: #A51C30;
     border-width: 2px;
     top: 15%;
     right: 15%;
@@ -269,7 +269,7 @@ ul {
 .shape-2 {
     width: 80px;
     height: 80px;
-    border-color: #ff9800;
+    border-color: #B5B5B5;
     border-width: 4px;
     top: 35%;
     right: 5%;
@@ -279,7 +279,7 @@ ul {
 .shape-3 {
     width: 40px;
     height: 40px;
-    border-color: #3498db;
+    border-color: #00539B;
     border-width: 3px;
     top: 5%;
     right: 25%;
@@ -299,7 +299,7 @@ ul {
 .shape-5 {
     width: 30px;
     height: 30px;
-    border-color: #ff9800;
+    border-color: #B5B5B5;
     border-width: 2px;
     bottom: 45%;
     right: 18%;
@@ -317,15 +317,15 @@ ul {
 
 /* Dots */
 /* Pink dot near top title */
-.shape-8.dot { width: 8px; height: 8px; background-color: #e91e63; top: 12%; right: 35%; }
+.shape-8.dot { width: 8px; height: 8px; background-color: #A51C30; top: 12%; right: 35%; }
 /* Blue dot near nested orange */
-.shape-10.dot { width: 10px; height: 10px; background-color: #3498db; top: 38%; right: 2%; }
+.shape-10.dot { width: 10px; height: 10px; background-color: #00539B; top: 38%; right: 2%; }
 
 /* Shape 9 (Nested Pink/Red) - Upper Right */
 .shape-9.nested {
     width: 50px;
     height: 50px;
-    border-color: #e91e63;
+    border-color: #A51C30;
     border-width: 2px;
     top: 25%;
     right: 28%;
@@ -333,7 +333,7 @@ ul {
 .shape-9.nested .inner {
     width: 20px;
     height: 20px;
-    border: 2px solid #e91e63;
+    border: 2px solid #A51C30;
 }
 
 .hero-container {
@@ -373,7 +373,7 @@ ul {
     font-weight: 500;
     line-height: 1.8;
     letter-spacing: 0.2px;
-    border-left: 4px solid #ff9800; /* Vertical Orange Line */
+    border-left: 4px solid #B5B5B5; /* Vertical Orange Line */
     padding-left: 1rem;
     display: inline-block; /* Keeps border tight to text height */
 }
@@ -462,7 +462,7 @@ ul {
     display: block;
     width: 60px;
     height: 2px;
-    background-color: #ff9800; /* Changed to orange */
+    background-color: #B5B5B5; /* Changed to orange */
     margin: 10px auto 0;
     border-radius: 2px;
 }
@@ -734,14 +734,14 @@ ul {
 }
 
 /* Color cycling for borders on hover */
-#research-others-view .research-item:nth-child(3n+1):hover { border-color: #e91e63 !important; }
-#research-others-view .research-item:nth-child(3n+2):hover { border-color: #ff9800 !important; }
-#research-others-view .research-item:nth-child(3n+3):hover { border-color: #3498db !important; }
+#research-others-view .research-item:nth-child(3n+1):hover { border-color: #A51C30 !important; }
+#research-others-view .research-item:nth-child(3n+2):hover { border-color: #B5B5B5 !important; }
+#research-others-view .research-item:nth-child(3n+3):hover { border-color: #00539B !important; }
 
 /* Ensure tags also light up inside these boxes */
-#research-others-view .research-item:nth-child(3n+1):hover .exp-tag { color: #e91e63; }
-#research-others-view .research-item:nth-child(3n+2):hover .exp-tag { color: #ff9800; }
-#research-others-view .research-item:nth-child(3n+3):hover .exp-tag { color: #3498db; }
+#research-others-view .research-item:nth-child(3n+1):hover .exp-tag { color: #A51C30; }
+#research-others-view .research-item:nth-child(3n+2):hover .exp-tag { color: #B5B5B5; }
+#research-others-view .research-item:nth-child(3n+3):hover .exp-tag { color: #00539B; }
 
 #research-others-view .research-item h3 {
     color: #000;
@@ -1170,17 +1170,17 @@ ul {
     }
 
     /* Cycle colors on active tap (Keep for click interaction fallback) */
-    .experience-item:nth-child(3n+1):active { border-color: #e91e63; }
-    .experience-item:nth-child(3n+2):active { border-color: #ff9800; }
-    .experience-item:nth-child(3n+3):active { border-color: #3498db; }
+    .experience-item:nth-child(3n+1):active { border-color: #A51C30; }
+    .experience-item:nth-child(3n+2):active { border-color: #B5B5B5; }
+    .experience-item:nth-child(3n+3):active { border-color: #00539B; }
 
-    .experience-item:nth-child(3n+1):active .exp-tag { color: #e91e63; }
-    .experience-item:nth-child(3n+2):active .exp-tag { color: #ff9800; }
-    .experience-item:nth-child(3n+3):active .exp-tag { color: #3498db; }
+    .experience-item:nth-child(3n+1):active .exp-tag { color: #A51C30; }
+    .experience-item:nth-child(3n+2):active .exp-tag { color: #B5B5B5; }
+    .experience-item:nth-child(3n+3):active .exp-tag { color: #00539B; }
 
-    #research-others-view .research-item:nth-child(3n+1):active { border-color: #e91e63 !important; }
-    #research-others-view .research-item:nth-child(3n+2):active { border-color: #ff9800 !important; }
-    #research-others-view .research-item:nth-child(3n+3):active { border-color: #3498db !important; }
+    #research-others-view .research-item:nth-child(3n+1):active { border-color: #A51C30 !important; }
+    #research-others-view .research-item:nth-child(3n+2):active { border-color: #B5B5B5 !important; }
+    #research-others-view .research-item:nth-child(3n+3):active { border-color: #00539B !important; }
 
     .experience-item:last-child {
         border-bottom: none; /* No line for the last item */
