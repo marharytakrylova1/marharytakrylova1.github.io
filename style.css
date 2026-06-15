@@ -131,9 +131,9 @@ ul {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 0.8rem 2.4rem;
+    padding: 0.8rem 2rem;
     border-radius: 50px;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
     border: none;
     font-size: 0.95rem;
@@ -141,6 +141,15 @@ ul {
     color: white;
     text-decoration: none;
     text-align: center;
+    white-space: nowrap;
+}
+
+/* Ensure buttons in nav have correct styling and don't inherit nav link colors/padding */
+.nav a.btn, 
+.hero-actions .btn {
+    color: white;
+    padding: 0.5rem 1.5rem;
+    min-width: auto;
 }
 
 .btn-primary {
@@ -393,6 +402,7 @@ ul {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .hero-social-link {
