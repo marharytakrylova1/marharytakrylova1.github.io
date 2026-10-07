@@ -19,9 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 othersView.style.display = 'none';
                 
                 if (filterValue === 'current-projects') {
+                    projectsView.classList.add('current-projects-active');
                     currentProjectsList.style.display = 'flex';
                     pastProjectsList.style.display = 'none';
                 } else {
+                    projectsView.classList.remove('current-projects-active');
                     currentProjectsList.style.display = 'none';
                     pastProjectsList.style.display = 'flex';
                 }

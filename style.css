@@ -802,6 +802,12 @@ ul {
     align-items: center;
 }
 
+/* Let the short current-project list determine its own timeline height. */
+#research-projects-view.current-projects-active .global-timeline-container {
+    height: auto;
+    align-self: stretch;
+}
+
 .timeline-bar {
     position: absolute;
     top: 0;
