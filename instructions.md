@@ -20,3 +20,6 @@ it was presented at Harvard Medical School MS in Bioethics Symposium        Apr 
 
 ## Publications
 - “Evaluating AI Chatbot Response Quality and Readability for Patient Education on Endoscopic Lumbar Discectomy: A Comparative Study of GPT-4o and Claude 3.5 Sonnet” is accepted for publication in Bulletin of the Hospital for Joint Diseases. Authors, in order: Marharyta Krylova, Elina Khabibullina, Muhammad Abd-El-Barr, Don Young Park. No publication date or DOI is available yet; display the acceptance status without a placeholder link.
+
+## Asset caching
+- `index.html` uses content-versioned query strings for `style.css` and `script.js` to avoid mixing fresh HTML with cached assets. When either asset changes, update its `v` value to the first 12 characters of its SHA-256 hash (`shasum -a 256 style.css script.js`) and deploy the updated HTML with the assets.
