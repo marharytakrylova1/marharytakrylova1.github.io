@@ -1,3 +1,43 @@
+// Apply the theme before the page paints to avoid a light flash on dark visits.
+(() => {
+    const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+    let preference = null;
+    try {
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'light' || storedTheme === 'dark') preference = storedTheme;
+    } catch {
+        // Theme switching still works when browser storage is unavailable.
+    }
+
+    function applyTheme(theme) {
+        document.documentElement.dataset.theme = theme;
+        const toggle = document.querySelector('.theme-toggle');
+        if (toggle) {
+            toggle.setAttribute('aria-checked', String(theme === 'dark'));
+            toggle.title = `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`;
+        }
+    }
+
+    applyTheme(preference || (systemTheme.matches ? 'dark' : 'light'));
+    systemTheme.addEventListener('change', event => {
+        if (!preference) applyTheme(event.matches ? 'dark' : 'light');
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const toggle = document.querySelector('.theme-toggle');
+        applyTheme(document.documentElement.dataset.theme);
+        toggle.addEventListener('click', () => {
+            preference = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+            applyTheme(preference);
+            try {
+                localStorage.setItem('theme', preference);
+            } catch {
+                // Keep the selected theme for this page even without storage.
+            }
+        });
+    });
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // --- Research Section Filtering ---
@@ -62,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const RES_START_YEAR = 2022;
     const END_YEAR = 2027; 
     
-    const COLORS = ['#A51C30', '#B5B5B5', '#00539B'];
+    const COLORS = ['var(--highlight-red)', 'var(--highlight-neutral)', 'var(--highlight-blue)'];
 
     function getMonthsFromStart(dateStr, startYear) {
         let date;
@@ -135,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     node.classList.add('active-node');
                     node.style.setProperty('--active-color', color);
                 } else {
-                    node.style.backgroundColor = '#ddd';
+                    node.style.backgroundColor = '';
                     node.classList.remove('active-node');
                 }
             });
@@ -154,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (tag) tag.style.color = '';
             
             nodes.forEach(node => {
-                node.style.backgroundColor = '#ddd';
+                node.style.backgroundColor = '';
                 node.classList.remove('active-node');
             });
         });
@@ -186,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (tag) tag.style.color = color;
                 } else {
                     item.classList.remove('mobile-active');
-                    item.style.borderColor = '#eee'; // Reset to default gray
+                    item.style.borderColor = ''; // Reset to the theme's default border
                     if (tag) tag.style.color = ''; // Reset text
                 }
             });
